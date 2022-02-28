@@ -1,0 +1,44 @@
+{
+    "Eventos":[
+
+        {
+            "Nombre":"Evento1",
+            "Descripcion":"Descripción evento1",
+            "Precio":15,
+            "EventosPrevios":[],
+            "CursosPrevios":[],
+            "Fecha":"15/03/2022 13:36:00",
+            "UrlOnline":null,
+            "GPS":{
+                "CoordenadaX":4.01,
+                "CoordenadaY":0.05
+            },
+            "Duracion":"2:00:00",
+            "AccesoAGrabacionIncluido":false,
+            "SeGrabara":true
+            
+
+        },
+        {
+            "Nombre":"Evento2",
+            "Descripcion":"Descripción evento2",
+            "Precio":15,
+            "EventosPrevios":["Evento1"],
+            "CursosPrevios":[],
+            "Fecha":"16/03/2022 13:36:00",
+            "UrlOnline":null,
+            "GPS":{
+                "CoordenadaX":4.01,
+                "CoordenadaY":0.05
+            },
+            "Duracion":"1:30:00",
+            "AccesoAGrabacionIncluido":false,
+            "SeGrabara":true
+            
+
+        }
+
+
+
+    ]
+}
