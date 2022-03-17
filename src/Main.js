@@ -9,13 +9,13 @@ $(function () {
         $(this).hide();
     });
 
-    FraseInspiradora.Load().then(frases => {
+    Data.GetFrasesInspiradoras().then(frases => {
         console.log(frases);
     });
-    Curso.Load().then(cursos => {
+    Data.GetCursos().then(cursos => {
         console.log(cursos);
     });
-    Evento.Load().then(eventos => {
+    Data.GetEventos().then(eventos => {
         console.log(eventos);
     });
 
