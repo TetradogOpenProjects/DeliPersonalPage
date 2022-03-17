@@ -1,0 +1,30 @@
+{
+  "Ciculos": [
+    {
+      "Nombre": "Terapeuticos",
+      "Fecha": "20/05/22 7:50:0",
+      "Descripcion": "Sanación",
+      "Plazas": 15,
+      "SeGraba": false,
+      "Requisitos": {
+        "Eventos": [],
+        "Cursos": [],
+        "Circulos": []
+      },
+      "Content": [
+        {
+          "IsUrlImg": false,
+          "Data": "Texto pre img"
+        },
+        {
+          "IsUrlImg": true,
+          "Data": [ "imgCirculoTerapeutico_1.jpg" ]
+        },
+        {
+          "IsUrlImg": false,
+          "Data": "Texto pos img"
+        }
+      ]
+    }
+  ]
+}

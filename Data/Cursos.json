@@ -1,52 +1,66 @@
 {
-    "Cursos":[
+  "Cursos": [
+    {
+      "Nombre": "Curso1",
+      "Descripcion": "Iniciación al mundo de la Luz",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 149.99,
+      "Dias": [
+
         {
-            "Nombre":"Curso1",
-            "Descripcion":"Iniciación al mundo de la Luz",
-            "GPS":{
-                "CoordenadaX":41.7833,
-                "CoordenadaY":3.0333
-            },
-            "Precio":149.99,
-            "Dias":[
-                    
-                    {
-                    "Dia":"20/05/2022",
-                    "HoraInicio":"7:30:00",
-                    "HoraFin":"12:00:00",
-                    "Descansos":[{
-                                "Inicio":"10:00:00",
-                                "Fin":"10:45:00"
-                            }]    
-                    },
-                    {
-                        "Dia":"30/05/2022",
-                        "HoraInicio":"15:30:00",
-                        "HoraFin":"22:00:00",
-                        "Descansos":[{
-                                    "Inicio":"20:00:00",
-                                    "Fin":"20:45:00"
-                                }]   
-                        }
-                ],
-            
-            "CursosPrevios":[],
-            "TotalPlazasPresenciales":10,
-            "TotalPlazasOnline":-1,
-            "AccesoAGrabacionIncluido":true,
-            "SeGrabara":true,
-            "FechaReservas":"14/05/2022 0:00:00",
-            "FechaVisible":"10/05/2022 0:00:00",
-            "Imagenes":[
-
-                        "Curso1_1.jpg",
-                        "Curso1_2.jpg"
-            ],
-            "Banners":[
-
-                "Curso1_banner1.jpg",
-                "Curso1_banner2.jpg"
-            ]
+          "Dia": "20/05/2022",
+          "HoraInicio": "7:30:00",
+          "HoraFin": "12:00:00",
+          "Descansos": [
+            {
+              "Inicio": "10:00:00",
+              "Fin": "10:45:00"
+            }
+          ]
+        },
+        {
+          "Dia": "30/05/2022",
+          "HoraInicio": "15:30:00",
+          "HoraFin": "22:00:00",
+          "Descansos": [
+            {
+              "Inicio": "20:00:00",
+              "Fin": "20:45:00"
+            }
+          ]
         }
-    ]
+      ],
+
+      "CursosPrevios": [],
+      "TotalPlazasPresenciales": 10,
+      "TotalPlazasOnline": -1,
+      "AccesoAGrabacionIncluido": true,
+      "SeGrabara": true,
+      "FechaReservas": "14/05/2022 0:00:00",
+      "FechaVisible": "10/05/2022 0:00:00",
+      "Banners": [
+
+        "Curso1_banner1.jpg",
+        "Curso1_banner2.jpg"
+      ],
+      "Content": [
+        {
+          "IsUrlImg": false,
+          "Data": "Texto pre img"
+        },
+        {
+          "IsUrlImg": true,
+          "Data": [ "imgCurso1_1.jpg" ]
+        },
+        {
+          "IsUrlImg": false,
+          "Data": "Texto pos img"
+        }
+
+      ]
+    }
+  ]
 }

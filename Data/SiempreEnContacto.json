@@ -1,0 +1,16 @@
+{
+  "Content": [
+    {
+      "IsUrlImg": false,
+      "Data": "Texto pre img"
+    },
+    {
+      "IsUrlImg": true,
+      "Data": [ "imgCurso1_1.jpg" ]
+    },
+    {
+      "IsUrlImg": false,
+      "Data": "Texto pos img"
+    }
+  ]
+}
