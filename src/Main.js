@@ -1,14 +1,12 @@
 $(function () {
 
 
-
-    
-
     $('#container').show();
     $('#updateBanner').click(function () {
         $(this).hide();
     });
 
+    //pongo la información de la web
     Data.GetFrasesInspiradoras().then(frases => {
         console.log(frases);
     });
