@@ -2,7 +2,11 @@
   "Content": [
     {
       "IsUrlImg": false,
-      "Value": "Texto"
+      "Value": "TextoéóíáúïÜüÉÁÍÚÓñÑ"
+    },
+    {
+      "IsUrlImg": true,
+      "Value": [ "Imagenes/gmail.png", "Imagenes/paypal.png" ]
     }
   ]
 }

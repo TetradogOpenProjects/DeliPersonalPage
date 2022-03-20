@@ -5,8 +5,8 @@ class Data {
             .then(r => r.json())
             .then(j => j.Circulos);
     }
-    static GetContacto() {
-        return fetch("Data/Contacto.json")
+    static GetContactoYMetodosDePago() {
+        return fetch("Data/ContactoYMetodosDePago.json")
             .then(r => r.json());
     }
     static GetCursos() {
@@ -14,11 +14,7 @@ class Data {
             .then(r => r.json())
             .then(jData => jData.Cursos);
     }
-    static GetEventos() {
-        return fetch("Data/Eventos.json")
-            .then(r => r.json())
-            .then(j => j.Eventos);
-    }
+
     static GetFrasesInspiradoras() {
         return fetch("Data/FrasesInspiradoras.json")
             .then(r => r.json())
@@ -26,8 +22,20 @@ class Data {
     }
     static GetIntroduccionReiki() {
         return fetch("Data/IntroduccionReiki.json")
+            .then(r => r.json());
+    }
+    static GetMeditaciones() {
+        return fetch("Data/Meditaciones.json")
             .then(r => r.json())
-            .then(jData => jData.Content);
+            .then(j => j.Meditaciones);
+    }
+    static GetMensaje() {
+        return fetch("Data/Mensaje.json")
+            .then(r => r.json());
+    }
+    static GetOrientacion() {
+        return fetch("Data/Orientacion.json")
+            .then(r => r.json());
     }
     static GetOrigenReiki() {
         return fetch("Data/OrigenReiki.json")
@@ -35,17 +43,16 @@ class Data {
     }
     static GetSiempreEnContacto() {
         return fetch("Data/SiempreEnContacto.json")
-            .then(r => r.json())
-            .then(j => j.Content);
+            .then(r => r.json());
     }
     static GetSimbolos() {
         return fetch("Data/Simbolos.json")
             .then(r => r.json())
             .then(jData => jData.Simbolos);
     }
-    static GetsobreAdelaida() {
+    static GetSobreAdelaida() {
         return fetch("Data/SobreAdelaida.json")
             .then(r => r.json())
-            .then(jData => jData.Content);
+            .then(jData => jData.Frases);
     }
 }
