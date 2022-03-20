@@ -1,11 +1,10 @@
 {
-    "Eventos":[
+    "Meditaciones":[
 
       {
-        "Nombre": "Evento1",
-        "Descripcion": "Descripción evento1",
+        "Nombre": "Meditación1",
+        "Descripcion": "Descripción meditacion1",
         "Precio": 15,
-        "EventosPrevios": [],
         "CursosPrevios": [],
         "Fecha": "15/03/2022 13:36:00",
         "UrlOnline": null,
@@ -34,10 +33,9 @@
 
       },
       {
-        "Nombre": "Evento2",
-        "Descripcion": "Descripción evento2",
+        "Nombre": "Meditación2",
+        "Descripcion": "Descripción meditacion2",
         "Precio": 15,
-        "EventosPrevios": [ "Evento1" ],
         "CursosPrevios": [],
         "Fecha": "16/03/2022 13:36:00",
         "UrlOnline": null,
@@ -45,7 +43,7 @@
           "CoordenadaX": 4.01,
           "CoordenadaY": 0.05
         },
-        "Duracion": "1:30:00",
+        "Duracion": "1:00:00",
         "AccesoAGrabacionIncluido": false,
         "SeGrabara": true,
         "Content": [

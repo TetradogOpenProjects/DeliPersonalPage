@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Data",
-    "\\src"
+    "\\src",
+    "\\Views"
   ],
-  "SelectedNode": "\\src\\FraseInspiradora.js",
+  "SelectedNode": "\\src\\Main.js",
   "PreviewInSolutionExplorer": false
 }

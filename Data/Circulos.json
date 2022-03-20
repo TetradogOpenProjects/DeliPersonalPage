@@ -5,6 +5,7 @@
       "Fecha": "20/05/22 7:50:0",
       "Descripcion": "Sanación",
       "Plazas": 15,
+      "Precio": 30,
       "SeGraba": false,
       "Requisitos": {
         "Eventos": [],

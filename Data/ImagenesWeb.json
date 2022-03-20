@@ -1,0 +1,50 @@
+{
+  "Bizum": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/bizum.svg"
+  },
+  "Telegram": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/telegram.svg"
+  },
+  "Whatsapp": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/whatsapp.svg"
+  },
+  "Facebook": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/facebook.svg"
+  },
+  "Instagram": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/instagram.svg"
+  },
+  "VideoPlayer": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/videoPlayer.svg"
+  },
+  "FederacionReiki": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/federacionReiki.jpg"
+  },
+
+  "PayPal": {
+    "AtribucionHTML": "<a href='https://www.flaticon.es/iconos-gratis/paypal' title='paypal iconos'> Paypal iconos creados por Roundicons - Flaticon </a>",
+    "Path": "Imagenes/paypal.png"
+  },
+
+  "Money": {
+    "AtribucionHTML": "<a href='https://www.flaticon.es/iconos-gratis/dinero' title='dinero iconos'> Dinero iconos creados por Freepik - Flaticon </a>",
+    "Path": "Imagenes/dinero.png"
+  },
+
+  "GMail": {
+    "AtribucionHTML": "<a href='https://www.flaticon.com/free-icons/gmail' title='gmail icons'> Gmail icons created by Pixel perfect - Flaticon </a>",
+    "Path": "Imagenes/gmail.png"
+  },
+
+  "Telefono": {
+    "AtribucionHTML": "<a href='https://www.flaticon.es/iconos-gratis/telefono' title='teléfono iconos'> Teléfono iconos creados por Freepik - Flaticon </a>",
+    "Path": "Imagenes/telefono.png"
+  }
+}
