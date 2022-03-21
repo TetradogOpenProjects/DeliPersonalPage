@@ -1,16 +1,10 @@
 {
   "Content": [
+
     {
-      "IsUrlImg": false,
-      "Data": "Texto pre img"
-    },
-    {
-      "IsUrlImg": true,
-      "Data": [ "imgCurso1_1.jpg" ]
-    },
-    {
-      "IsUrlImg": false,
-      "Data": "Texto pos img"
+      "IsUrl": false,
+      "Value": "Cuando se acaba un curso, no nos despedimos, siempre podemos mantener el contacto y resolver dudas, hacer prácticas."
     }
+
   ]
 }

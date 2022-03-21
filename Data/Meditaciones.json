@@ -18,15 +18,15 @@
         "Content": [
           {
             "IsUrlImg": false,
-            "Data": "Texto pre img"
+            "Value": "Texto pre img"
           },
           {
             "IsUrlImg": true,
-            "Data": [ "imgEvento1_1.jpg" ]
+            "Value": [ "imgEvento1_1.jpg" ]
           },
           {
             "IsUrlImg": false,
-            "Data": "Texto pos img"
+            "Value": "Texto pos img"
           }
 
         ]
@@ -48,16 +48,16 @@
         "SeGrabara": true,
         "Content": [
           {
-            "IsUrlImg": false,
-            "Data": "Texto pre img"
+            "IsUrl": false,
+            "Value": "Texto pre img"
           },
           {
-            "IsUrlImg": true,
-            "Data": [ "imgEvento2_1.jpg" ]
+            "IsUrl": true,
+            "Value": [ "imgEvento2_1.jpg" ]
           },
           {
-            "IsUrlImg": false,
-            "Data": "Texto pos img"
+            "IsUrl": false,
+            "Value": "Texto pos img"
           }
 
         ]

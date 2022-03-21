@@ -3,27 +3,22 @@
     {
       "Nombre": "Terapeuticos",
       "Fecha": "20/05/22 7:50:0",
-      "Descripcion": "Sanación",
+      "Descripcion": "SanaciÃ³n",
       "Plazas": 15,
       "Precio": 30,
       "SeGraba": false,
-      "Requisitos": {
-        "Eventos": [],
-        "Cursos": [],
-        "Circulos": []
-      },
       "Content": [
         {
-          "IsUrlImg": false,
-          "Data": "Texto pre img"
+          "IsUrl": false,
+          "Value": "Texto pre img"
         },
         {
-          "IsUrlImg": true,
-          "Data": [ "imgCirculoTerapeutico_1.jpg" ]
+          "IsUrl": true,
+          "Value": [ "imgCirculoTerapeutico_1.jpg" ]
         },
         {
-          "IsUrlImg": false,
-          "Data": "Texto pos img"
+          "IsUrl": false,
+          "Value": "Texto pos img"
         }
       ]
     }

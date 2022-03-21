@@ -1,8 +1,8 @@
 {
   "Cursos": [
     {
-      "Nombre": "Curso1",
-      "Descripcion": "Iniciación al mundo de la Luz",
+      "Nombre": "Reiki Usui I",
+      "Descripcion": "El despertar",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
@@ -41,23 +41,24 @@
       "SeGrabara": true,
       "FechaReservas": "14/05/2022 0:00:00",
       "FechaVisible": "10/05/2022 0:00:00",
-      "Banners": [
-
-        "Curso1_banner1.jpg",
-        "Curso1_banner2.jpg"
-      ],
+      "Banners": [],
       "Content": [
         {
-          "IsUrlImg": false,
-          "Data": "Texto pre img"
+          "IsUrl": false,
+          "Value": "El primer nivel es la reconexion mas alla de toda explicacion didactitica convertirse en canal requiere una conexion entre nuestro sistema energetico y y la energia universal.Primera toma de contacto con el alumno o alumnos para hacer entrega del dossier y explicar detalles que no estan en el libro.Enseñar el simbolo del primer nivel y como se dibuja."
         },
         {
-          "IsUrlImg": true,
-          "Data": [ "imgCurso1_1.jpg" ]
+          "IsUrl": true,
+          "Value": [
+            
+            "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
+            "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
+
+          ]
         },
         {
-          "IsUrlImg": false,
-          "Data": "Texto pos img"
+          "IsUrl": false,
+          "Value": "Despues hay un periodo de purificacion adonde durante 21 dias tienen que hacer una limpieza y dibujar el simbolo cada dia.Despues de los 21 dias cada alumno por separado hara con la maestra de reiki una ceramonia de iniciacion con la intencion de abrir el canal central energetico y reconectar al alumno con la fuente,el universo,a la energia vital universal.A partir de ahy el alumno podra hacer reiki"
         }
 
       ]

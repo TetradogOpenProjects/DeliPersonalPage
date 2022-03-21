@@ -1,12 +1,8 @@
 {
   "Content": [
     {
-      "IsUrlImg": false,
-      "Value": "TextoéóíáúïÜüÉÁÍÚÓñÑ"
-    },
-    {
-      "IsUrlImg": true,
-      "Value": [ "Imagenes/gmail.png", "Imagenes/paypal.png" ]
+      "IsUrl": false,
+      "Value": "<span>Antes de nada quiero recomendarte que me preguntes sin miedo si no sabes que curso o terapia debes hacer o si tienes deberes del momento en el que te encuentras. Yo te oriento con una lectura para saber en que ciclo de la vida estás en este momento. Es una orientación <b> gratuita y sin compromiso</b> &nbsp; para saber que proposito tiene tu alma en este momento.</span>"
     }
   ]
 }
