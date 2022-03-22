@@ -12,7 +12,10 @@
           "CoordenadaX": 4.01,
           "CoordenadaY": 0.05
         },
+        "PlazasPresenciales": 10,
+        "PlazasOnline": -1,
         "Duracion": "2:00:00",
+        "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
         "SeGrabara": true,
         "Content": [
@@ -43,7 +46,10 @@
           "CoordenadaX": 4.01,
           "CoordenadaY": 0.05
         },
+        "PlazasPresenciales": 10,
+        "PlazasOnline": -1,
         "Duracion": "1:00:00",
+        "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
         "SeGrabara": true,
         "Content": [

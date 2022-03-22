@@ -6,6 +6,8 @@
       "Descripcion": "Sanación",
       "Plazas": 15,
       "Precio": 30,
+      "Duracion": "5 Horas",
+      "HayDescanso": true,
       "SeGraba": false,
       "Content": [
         {
