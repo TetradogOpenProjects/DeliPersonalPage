@@ -63,19 +63,19 @@ $(function () {
 
     Data.GetTerapias().then(terapias => {
 
-        addSlideBlock('Terapias','terapias', Views.GetTerapiaDiv, terapias);
+        addSlideBlock('Terapias', 'terapias', Views.GetTerapiaDiv, terapias, 'terapia');
 
     });
 
     Data.GetCirculos().then(circulos => {
 
-        addSlideBlock('Círculos','circulos', Views.GetCirculoDiv, circulos);
+        addSlideBlock('Círculos', 'circulos', Views.GetCirculoDiv, circulos, 'circulo');
 
     });
 
     Data.GetMeditaciones().then(meditaciones => {
 
-        addSlideBlock('Meditaciones guiadas','meditaciones', Views.GetMeditacionDiv, meditaciones);
+        addSlideBlock('Meditaciones guiadas', 'meditaciones', Views.GetMeditacionDiv, meditaciones, 'meditacion');
     });
 
     Data.GetSiempreEnContacto().then(siempreEnContacto => {
@@ -111,15 +111,19 @@ $(function () {
 
     function addSlideBlock(titulo,idParent, methodGetOneView, arrayData,tipo) {
         var id = 'parent_items_' + idParent ;
-        var content = '<div id="' + id + '"></div>';
-    
+        var content = '<div id="' + id + '" ></div>';
+ 
         addBlock(idParent, titulo, content + Views.getMenu(id, 'menuItemPrincipalOff', arrayData.length));
 
-        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (item) => {
+        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data) => {
+            
+            var item = data[0];
+            var tipo = data[1];
             
             $('#' + id).html(methodGetOneView(item,tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
-        }, arrayData);
+
+        }, arrayData,tipo);
     }
 
     function addBlock(idParent, title, content) {

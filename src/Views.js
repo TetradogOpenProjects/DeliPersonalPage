@@ -262,7 +262,7 @@ class Views {
 
     }
 
-    static setClickMenu(idParent, itemColorEnable, itemColorDisabled, metodoUpdateItem, arrayDataItems) {
+    static setClickMenu(idParent, itemColorEnable, itemColorDisabled, metodoUpdateItem, arrayDataItems,tipo=null) {
 
         const DISABLED = 1;
         const ENABLED = 0;
@@ -299,7 +299,10 @@ class Views {
 
                     $(this).removeClass(window.DicMenuItemColors[prefix][DISABLED]);
                     $(this).addClass(window.DicMenuItemColors[prefix][ENABLED]);
-                    window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos]);
+                    if(tipo!=null)
+                        window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos],tipo]);
+                    else
+                        window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos]);
 
                 }
 
