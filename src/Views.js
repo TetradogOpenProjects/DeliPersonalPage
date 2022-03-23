@@ -51,8 +51,8 @@ class Views {
         }
         return '<div class="menosInfo" '+strHide+'><label>Menos información</label></div>';
     }
-    static GetMasOMenosInfo(masInfoOn = true) {
-        return '<div class="masOMenosInfo">' + Views.GetMasInfo(masInfoOn) + Views.GetMenosInfo(!masInfoOn) + "</div>";
+    static GetMasOMenosInfo(masInfoHide = false) {
+        return '<div class="masOMenosInfo">' + Views.GetMasInfo(masInfoHide) + Views.GetMenosInfo(!masInfoHide) + "</div>";
     }
     static GetDuracionYDescanso(duracion, hayDescanso) {
         var divDuracion = '<div class="duracion">';

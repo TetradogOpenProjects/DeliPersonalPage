@@ -1,14 +1,16 @@
 {
- 
+
   "Facebook": "deli.coto",
   "Instagram": "cotodeli",
-  
-  "Telefono": "+34656926695",
-  "HasTelegram": true,
+
+  "Telefono": "656926695",
+
   "HasWhatsapp": true,
-  "HasBizum": true,
-  
+  "HasBizum": false,
+  "Bizum": null,
   "Email": "laluzdelalma@gmail.com",
-  "HasPayPal": true
-    
+  "HasPayPal": false,
+  "PayPalMe": "AdelaidaCotoVazquez",
+  "HasTelegram": false,
+  "Telegram": "https://t.me/LaLuzDelAlma"
 }

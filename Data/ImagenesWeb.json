@@ -33,14 +33,14 @@
     "Path": "Imagenes/paypal.png"
   },
 
-  "Money": {
+  "Dinero": {
     "AtribucionHTML": "<a href='https://www.flaticon.es/iconos-gratis/dinero' title='dinero iconos'> Dinero iconos creados por Freepik - Flaticon </a>",
     "Path": "Imagenes/dinero.png"
   },
 
   "GMail": {
     "AtribucionHTML": "<a href='https://www.flaticon.com/free-icons/gmail' title='gmail icons'> Gmail icons created by Pixel perfect - Flaticon </a>",
-    "Path": "Imagenes/gmail.png"
+    "Path": "Imagenes/gmail.jpg"
   },
 
   "Telefono": {

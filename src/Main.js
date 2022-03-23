@@ -7,27 +7,11 @@ $(function () {
         $(this).hide();
     });
 
-    /*
-        
-        <div id="presentacionAdelaida" class="row"></div>
-        <div id="orientacion" class="row"></div>
-        <div id="origenReiki" class="row"></div>
-        <div id="introduccionReiki" class="row"></div>
-        <div id="cursos" class="row"></div>
-        <div id="terapias" class="row"></div>
-        <div id="circulos" class="row"></div>
-        <div id="siempreEnContacto" class="row"></div>
-        <div id="mensaje" class="row"></div>
-        <div id="contactoYMetodosDePago" class="row"></div>
-        <div id="links" class="row"></div>
-     
-     */
-
     //pongo la información de la web
     Promise.all([Data.GetPresentacion(), Data.GetSimbolos()]).then(data => {
         var presentacion = data[0];
         var simbolos = data[1];
-        addBlock('presentacionAdelaida', null, '<div class="presentacion" style="background-image:url(' + getRandom(presentacion.ImagenesFondo) + ')" >' +
+        addBlock('presentacionAdelaida', null, '<div id="presentacion" style="background-image:url(' + getRandom(presentacion.ImagenesFondo) + ')" >' +
             '<div class="row">' +
             '<img id="imgPerfil" src="' + getRandom(presentacion.ImagenesPerfil) + '" />' +
             '<label class="colorPrincipal">Adelaida</label>' +
@@ -38,11 +22,17 @@ $(function () {
             );
     });
 
+
     Data.GetOrientacion().then(orientacion => {
         addBlock('orientacion', 'Orientación', Views.GetContentView('orientacion', orientacion));
         Views.SetClicContentViewMenus('orientacion', orientacion);
     });
-    
+
+    Data.GetOrigenReiki().then(origen => {
+
+
+    });
+
     Data.GetIntroduccionReiki().then(introduccionReiki => {
 
         addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent">' +
@@ -86,6 +76,66 @@ $(function () {
         addBlock('mensaje', 'Mensaje', Views.GetContentView('mensaje', mensaje));
         Views.SetClicContentViewMenus('mensaje', mensaje);
     });
+
+
+    Data.GetLinks().then(links => {
+
+        addBlock('links', null, '<div><a href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a href="' + links.SourceCode +'" target="_blanc" >Source Code</a><a href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a><img id="imgFederacion"  /></div>');
+    });
+    
+    Promise.all([Views.GetImagenesWeb(), Data.GetContactoYMetodosDePago()]).then(data => {
+        var imagenesWeb = data[0];
+        var contactoYMetodosDePago = data[1];
+
+        var divContacto = '<div id="contacto"><span class="fila">';
+        var divMetodosDePagos= '<div id="pagos"><span class="fila">';
+        if (contactoYMetodosDePago.HasWhatsapp) {
+            divContacto += '<a href ="https://api.whatsapp.com/send?phone=' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgWhatsapp"/></a>';
+        }
+        if (contactoYMetodosDePago.HasTelegram) {
+            divContacto += '<a href="' + contactoYMetodosDePago.Telegram + '" target="_blanc" ><img id="imgTelegram"/></a>';
+        }
+        divContacto += '<a href="https://www.instagram.com/' + contactoYMetodosDePago.Instagram + '" target="_blanc" ><img id="imgInstagram"/></a>';
+        divContacto += '<a href="https://www.facebook.com/' + contactoYMetodosDePago.Facebook + '" target="_blanc" ><img id="imgFacebook"/></a>';
+        divContacto += '</span><span class="fila">';
+        divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
+        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+        divContacto += '</span>';
+        addBlock('contactoYMetodosDePago', 'Contacto', divContacto);
+       
+
+        if (contactoYMetodosDePago.HasBizum) {
+            divMetodosDePagos += '<a href ="' + contactoYMetodosDePago.Bizum + '" target="_blanc" ><img id="imgBizum"/></a>';
+        }
+        if (contactoYMetodosDePago.HasPayPal) {
+            divMetodosDePagos += '<a href ="https://paypal.me/' + contactoYMetodosDePago.PayPalMe + '" target="_blanc" ><img id="imgPayPal"/></a>';
+        }
+        divMetodosDePagos += '<img id="imgDinero"/>';
+        divMetodosDePagos += '</span></div>';
+     
+        addBlock('contactoYMetodosDePago', 'Métodos de pago', divMetodosDePagos);
+
+
+
+
+        $('#imgBizum').attr('src', imagenesWeb.Bizum.Path);
+        $('#imgPayPal').attr('src', imagenesWeb.PayPal.Path);
+        $('#imgDinero').attr('src', imagenesWeb.Dinero.Path);
+
+   
+
+        $('#imgWhatsapp').attr('src', imagenesWeb.Whatsapp.Path);
+        $('#imgTelegram').attr('src', imagenesWeb.Telegram.Path);
+        $('#imgInstagram').attr('src', imagenesWeb.Instagram.Path);
+        $('#imgFacebook').attr('src', imagenesWeb.Facebook.Path);
+        $('#imgGMail').attr('src', imagenesWeb.GMail.Path);
+        $('#imgTelefono').attr('src', imagenesWeb.Telefono.Path);
+        $('#imgFederacion') .attr('src', imagenesWeb.FederacionReiki.Path);
+
+    });
+
+    
+ 
 
     if ('serviceWorker' in navigator) {
         //registro el serviceWorker

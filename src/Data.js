@@ -19,6 +19,10 @@ class Data {
         return fetch("Data/IntroduccionReiki.json")
             .then(r => r.json());
     }
+    static GetLinks() {
+        return fetch("Data/Links.json")
+            .then(r => r.json());
+    }
     static GetMeditaciones() {
         return fetch("Data/Meditaciones.json")
             .then(r => r.json())
