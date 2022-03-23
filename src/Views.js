@@ -132,7 +132,9 @@ class Views {
     }
     static SetClicMasOMenosInfo(item, tipo) {
         var id = Views.GetId(item, tipo);
-        Views.SetClicContentViewMenus(id, item);
+        if (item.Content) {
+            Views.SetClicContentViewMenus(id, item);
+        }
         $('#' + id + ' .masInfo').click(function () {
             $('#' + id + ' .masInfo').hide();
             $('#' + id + ' .menosInfo').show();

@@ -1,6 +1,13 @@
 {
-  "ImagenesPerfil": ["Imagenes/Presentacion/imgPerfil_1.png"],
-  "ImagenesFondo": [ "Imagenes/Presentacion/fondo_1.jpg" ],
+
+  "ImagenesFondo": [
+    {
+      "AtribucionHTML": "<!-- Código HTML de reconocimiento de Can Stock Photo --><a href='https://www.canstockphoto.es'>(c) Can Stock Photo / rolffimages</a>",
+      "Path": "Imagenes/Presentacion/fondo_1.jpg"
+
+    }
+  
+  ],
   "SobreAdelaida": [
     "Trabajo directamente con el ser humano para que conecten con su espiritu y vivan a través de él"
   ],

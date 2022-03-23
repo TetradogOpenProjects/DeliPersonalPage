@@ -11,9 +11,8 @@ $(function () {
     Promise.all([Data.GetPresentacion(), Data.GetSimbolos()]).then(data => {
         var presentacion = data[0];
         var simbolos = data[1];
-        addBlock('presentacionAdelaida', null, '<div id="presentacion" style="background-image:url(' + getRandom(presentacion.ImagenesFondo) + ')" >' +
+        addBlock('presentacionAdelaida', null, '<div id="presentacion" style="background-image:url(' + getRandom(presentacion.ImagenesFondo).Path + ')" >' +
             '<div class="row">' +
-            '<img id="imgPerfil" src="' + getRandom(presentacion.ImagenesPerfil) + '" />' +
             '<label class="colorPrincipal">Adelaida</label>' +
             '<img id="imgSimbolo" src="'+getRandom(simbolos)+'"/>' +
             '<div id="sobreAdelaida" class="texto"><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
@@ -29,8 +28,14 @@ $(function () {
     });
 
     Data.GetOrigenReiki().then(origen => {
-        //falta esto :)
-
+        var pos = getRandomPos(origen.Partes);
+        var content = '<div class="partesOrigen">';
+        for (var i = 0; i < origen.Partes.length; i++) {
+            content += '<p>'+(i+1)+'- ' + origen.Partes[i] + '</p>';
+        }
+        content += '</div>';
+        addBlock('origenReiki', 'Origen Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '"><img id="imgMaestroReiki" src="' + origen.ImagenMaestro + '" /><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div>');
+        Views.SetClicMasOMenosInfo(origen, 'origenReiki');
     });
 
     Data.GetIntroduccionReiki().then(introduccionReiki => {
@@ -155,8 +160,11 @@ $(function () {
 
     console.log('###');
 
+    function getRandomPos(array) {
+        return Math.floor(Math.random() * array.length);
+    }
     function getRandom(array) {
-        return array[Math.floor(Math.random() * array.length)];
+        return array[getRandomPos(array)];
     }
 
     function addSlideBlock(titulo,idParent, methodGetOneView, arrayData,tipo) {

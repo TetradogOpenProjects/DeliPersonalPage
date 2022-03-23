@@ -1,0 +1,78 @@
+.menuItem {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+.menu .menuItem {
+    display: inline;
+    padding-left: 25px;
+    margin-right: 25px;
+}
+
+.menuItemSecundarioOn {
+    background-color: rgba(0, 88, 125, 1);
+}
+
+.menuItemSecundarioOff {
+    background-color: rgba(0, 88, 125, 0.36);
+}
+
+.menuItemPrincipalOn {
+    background-color: rgba(125, 0, 113, 1);
+}
+
+.menuItemPrincipalOff {
+    background-color: rgba(126, 89, 123, 0.62);
+}
+
+.colorPrincipal {
+    color: #5E1CE9;
+}
+
+.colorSecundario {
+    color: #0AAC1A;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+p {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.row iframe {
+    height: 300px;
+    width: 100%;
+}
+
+.modalidad img {
+    height: 15px;
+}
+
+#contacto img {
+    height: 32px;
+    padding-right: 16px;
+}
+
+#pagos img {
+    height: 32px;
+    padding-right: 16px;
+}
+
+#imgSimbolo {
+    height: 50px;
+    width: auto;
+}
+
+#imgFederacion {
+    height: 50px;
+}
+
+.fila {
+    padding-bottom: 16px;
+}
