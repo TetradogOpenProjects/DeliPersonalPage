@@ -4,8 +4,11 @@
     "\\Data",
     "\\Imagenes",
     "\\Imagenes\\Cursos",
+    "\\Imagenes\\Meditaciones",
+    "\\Imagenes\\Presentacion",
+    "\\Imagenes\\Terapias",
     "\\src"
   ],
-  "SelectedNode": "\\src\\Views.js",
+  "SelectedNode": "\\src\\Main.js",
   "PreviewInSolutionExplorer": false
 }
