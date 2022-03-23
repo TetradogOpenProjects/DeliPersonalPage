@@ -20,15 +20,18 @@
         "SeGrabara": true,
         "Content": [
           {
-            "IsUrlImg": false,
+            "IsUrl": false,
             "Value": "Texto pre img"
           },
           {
-            "IsUrlImg": true,
-            "Value": [ "imgEvento1_1.jpg" ]
+            "IsUrl": true,
+            "Value": [
+              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
+              "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
+            ]
           },
           {
-            "IsUrlImg": false,
+            "IsUrl": false,
             "Value": "Texto pos img"
           }
 
@@ -59,7 +62,10 @@
           },
           {
             "IsUrl": true,
-            "Value": [ "imgEvento2_1.jpg" ]
+            "Value": [
+              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
+              "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
+            ]
           },
           {
             "IsUrl": false,

@@ -18,13 +18,14 @@
     <script src="src/Main.js"></script>
     
     <style>
-        .circulo {
+        .menuItem {
             width: 10px;
             height: 10px;
             border-radius: 50%;
         }
+ 
 
-        .menu .circulo {
+        .menu .menuItem {
             display: inline;
             padding-left: 25px;
             margin-right: 25px;
@@ -35,6 +36,15 @@
         .menuItemSecundarioOff {
             background-color: rgba(0, 88, 125, 0.36);
         }
+
+        .menuItemPrincipalOn {
+            background-color: rgba(125, 0, 113, 1);
+        }
+
+        .menuItemPrincipalOff {
+            background-color: rgba(126, 89, 123, 0.62);
+        }
+        
         .colorPrincipal {
             color: #5E1CE9;
         }
@@ -54,9 +64,19 @@
             width: 100%;
 
         }
+        .modalidad img{
+            height:15px;
+        }
 
+        #imgSimbolo {
+            height: 50px;
+            width: auto;
+        }
 
-
+        #imgPerfil {
+            height: 80px;
+            border-radius: 360px;
+        }
         
     </style>
 
@@ -87,6 +107,7 @@
         <div id="cursos" class="row"></div>
         <div id="terapias" class="row"></div>
         <div id="circulos" class="row"></div>
+        <div id="meditaciones" class="row"></div>
         <div id="siempreEnContacto" class="row"></div>
         <div id="mensaje" class="row"></div>
         <div id="contactoYMetodosDePago" class="row"></div>

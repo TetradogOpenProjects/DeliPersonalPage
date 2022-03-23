@@ -15,11 +15,6 @@ class Data {
             .then(jData => jData.Cursos);
     }
 
-    static GetFrasesInspiradoras() {
-        return fetch("Data/FrasesInspiradoras.json")
-            .then(r => r.json())
-            .then(j => j.Frases);
-    }
     static GetIntroduccionReiki() {
         return fetch("Data/IntroduccionReiki.json")
             .then(r => r.json());
@@ -41,6 +36,10 @@ class Data {
         return fetch("Data/OrigenReiki.json")
             .then(r => r.json());
     }
+    static GetPresentacion() {
+        return fetch("Data/Presentacion.json")
+            .then(r => r.json());
+    }
     static GetSiempreEnContacto() {
         return fetch("Data/SiempreEnContacto.json")
             .then(r => r.json());
@@ -50,9 +49,10 @@ class Data {
             .then(r => r.json())
             .then(jData => jData.Simbolos);
     }
-    static GetSobreAdelaida() {
-        return fetch("Data/SobreAdelaida.json")
+
+    static GetTerapias() {
+        return fetch("Data/Terapias.json")
             .then(r => r.json())
-            .then(jData => jData.Frases);
+            .then(j => j.Terapias);
     }
 }
