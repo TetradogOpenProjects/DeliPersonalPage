@@ -36,14 +36,14 @@ class Views {
         return '<div class="tituloYSubtitulo"><label class="titulo">' + titulo + '</label><label class="subtitulo">' + subtitulo + '</label></div>';
     }
     static GetMasInfo() {
-        return '<div class="masInfo"><label>Más información</label></div>';
+        return '<div class="masInfo"><label>MÃ¡s informaciÃ³n</label></div>';
     }
     static GetMenosInfo(hide = true) {
         var strHide = '';
         if (hide) {
             strHide = "style='display:none'";
         }
-        return '<div class="menosInfo" '+strHide+'><label>Menos información</label></div>';
+        return '<div class="menosInfo" '+strHide+'><label>Menos informaciÃ³n</label></div>';
     }
     static GetMasOMenosInfo() {
         return '<div class="masOMenosInfo">' + this.GetMasInfo() + this.GetMenosInfo(true) + "</div>";
@@ -58,7 +58,7 @@ class Views {
         return divDuracion;
     }
     static GetPrecio(precio) {
-        return '<div class="precio"><label>' + precio + ' €</label></div>';
+        return '<div class="precio"><label>' + precio + ' â‚¬</label></div>';
     }
     static GetId(curso, prefix = 'curso') {
         return prefix+'_' + curso.Nombre.replace(' ', '');
@@ -129,11 +129,13 @@ class Views {
             $('#' + id + ' .masInfo').hide();
             $('#' + id + ' .menosInfo').show();
             $('#' + id + ' .content').show();
+            $('#' + id + ' .preContent').hide();
         });
         $('#' + id + ' .menosInfo').click(function () {
             $('#' + id + ' .masInfo').show();
             $('#' + id + ' .menosInfo').hide();
             $('#' + id + ' .content').hide();
+            $('#' + id + ' .preContent').show();
         });
         
     }
@@ -176,7 +178,7 @@ class Views {
         var divContent;
         var idMediaCarrusel;//falta que quede bien al mezclar videos con imagenes
         var strHide = '';
-        if (hide) {
+        if (isHiden) {
             strHide = "style='display:none'";
         }
         divContent = "<div id='content_" + idParent + "'class='content' " + strHide + ">";

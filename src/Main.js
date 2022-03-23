@@ -34,6 +34,17 @@ $(function () {
         console.log(meditaciones);
     });
 
+    Data.GetIntroduccionReiki().then(introduccionReiki => {
+
+        addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent">' +
+                                                                introduccionReiki.Content[0].Value + '</p>' +
+                                                                Views.GetContentView('introduccionReiki', introduccionReiki, true) +
+                                                                Views.GetMasOMenosInfo() + '</div>');
+        Views.SetClicMasOMenosInfo(introduccionReiki, 'introduccionReiki');
+
+
+    });
+
     Data.GetOrientacion().then(orientacion => {
         addBlock('orientacion', 'Orientación', Views.GetContentView('orientacion', orientacion));
         Views.SetClicContentViewMenus('orientacion', orientacion);
