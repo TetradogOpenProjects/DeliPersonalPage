@@ -188,7 +188,7 @@ class Views {
     
     static GetContentView(idParent, item,isHiden=false) {
         var divContent;
-        var idMediaCarrusel;//falta que quede bien al mezclar videos con imagenes
+        var idMediaCarrusel;
         var strHide = '';
         if (isHiden) {
             strHide = "style='display:none'";
@@ -206,8 +206,8 @@ class Views {
                 else {
 
                     idMediaCarrusel = "media_" + i + "_" + idParent;
-                    divContent += "<div class='col-auto' ><img id='img_" + idMediaCarrusel + "'  style='display:none;' />";
-                    divContent += "<iframe id='video_" + idMediaCarrusel + "' style='display:none;' ></iframe></div>";
+                    divContent += "<div id='" + idMediaCarrusel + "' class='row' ><img id='img_" + idMediaCarrusel + "' class='col-12'  style='display:none;' />";
+                    divContent += "<iframe id='video_" + idMediaCarrusel + "' class='col-12' style='display:none;' ></iframe></div>";
                     divContent += Views.getMenu(idMediaCarrusel, 'menuItemSecundarioOff', item.Content[i].Value.length);
 
                 }
@@ -236,6 +236,9 @@ class Views {
                         $("#img_" + idMediaCarrusel).hide();
                     }
                 }, item.Content[i].Value);
+                //ahora pongo el gesto de pasar el item con el dedo
+
+    
             }
         }
 
@@ -265,7 +268,7 @@ class Views {
     }
 
     static setClickMenu(idParent, itemColorEnable, itemColorDisabled, metodoUpdateItem, arrayDataItems,tipo=null) {
-
+        const ISON = 'isON';
         const DISABLED = 1;
         const ENABLED = 0;
 
@@ -296,11 +299,13 @@ class Views {
                         if (j != pos) {
                             $('#' + prefix + j).removeClass(window.DicMenuItemColors[prefix][ENABLED]);
                             $('#' + prefix + j).addClass(window.DicMenuItemColors[prefix][DISABLED]);
+                            $('#' + prefix + j).removeClass(ISON);
                         }
                     }
 
                     $(this).removeClass(window.DicMenuItemColors[prefix][DISABLED]);
                     $(this).addClass(window.DicMenuItemColors[prefix][ENABLED]);
+                    $(this).addClass(ISON);
                     if(tipo!=null)
                         window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos],tipo]);
                     else
@@ -331,5 +336,6 @@ class Views {
             'meditacion':false
 
         };
+        window.DicSwipe = {};
     }
 }
