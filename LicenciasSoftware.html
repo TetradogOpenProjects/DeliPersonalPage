@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="src/Data.js"></script>
+    <script src="src/Views.js"></script>
+    <script>
+        $(function () {
+
+
+            Data.GetPresentacion().then(presentacion => {
+
+                for (var i = 0; i < presentacion.ImagenesFondo.length; i++) {
+                    if (presentacion.ImagenesFondo[i].AtribucionHTML != null) {
+                        $('body').append('<div>'+presentacion.ImagenesFondo[i].AtribucionHTML+'</div>');
+                    }
+                }
+            });
+            Views.GetImagenesWeb().then(imgs => {
+
+                for (var clave in imgs) {
+                    // Controlando que json realmente tenga esa propiedad
+                    if (imgs.hasOwnProperty(clave) && imgs[clave].AtribucionHTML != null) {
+                        $('body').append('<div>' + imgs[clave].AtribucionHTML + '</div>' );
+                    }
+                }
+
+            });
+            
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Licencias Software</h1>
+    
+
+</body>
+</html>
