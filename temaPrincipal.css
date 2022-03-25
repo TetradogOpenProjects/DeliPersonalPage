@@ -286,3 +286,8 @@ h2 {
 .links {
     margin: 15px 0px;
 }
+.introduccionReiki img{
+    opacity:0.35;
+    height:250px;
+    object-fit:contain;
+}

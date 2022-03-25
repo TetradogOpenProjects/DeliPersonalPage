@@ -22,7 +22,7 @@ $(function () {
                                                     '</div>' +
                                                '</div>',
             
-            "col-12 col-md-8  offset-md-2");
+            "col-12 col-md-4  offset-md-4");
     });
 
 
@@ -38,7 +38,7 @@ $(function () {
             content += '<p>'+(i+1)+'- ' + origen.Partes[i] + '</p>';
         }
         content += '</div>';
-        addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><p class="preContent col-8">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content col-8" style="display:none;">' + content + '</div><img id="imgMaestroReiki" class="col-4" src="' + origen.ImagenMaestro + '" />' + Views.GetMasOMenosInfo() + '</div>');
+        addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><div class="col-8"><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div><img id="imgMaestroReiki" class="col-4" src="' + origen.ImagenMaestro + '" /></div>');
         Views.SetClicMasOMenosInfo(origen, 'origenReiki');
     });
 
@@ -244,7 +244,7 @@ $(function () {
         }, arrayData,tipo);
     }
 
-    function addBlock(idParent, title, content, bootstrap ="col-10 offset-1 col-md-6  offset-md-3 col-lg-5 offset-lg-3") {
+    function addBlock(idParent, title, content, bootstrap ="col-10 offset-1 col-md-4 offset-md-4") {
         var div = "<div class='"+bootstrap+"'>";
         if (title != null) {
             div += "<h2>" + title + "</h2>";
