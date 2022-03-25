@@ -5,60 +5,60 @@ class Views {
     }
 
     static GetPlazas(presenciales, online=0) {
-        var plazasDiv = '<div class="plazas">';
+        var plazasDiv = '<div class="plazas segundo">';
         if (presenciales > 0) {
             plazasDiv += '<label>' + presenciales + ' plazas presenciales </label>';
         }
         if (online > 0) {
-            plazasDiv += '<label>' + online + 'plazas online </label>';
+            plazasDiv += '<label class="segundo">' + online + 'plazas online </label>';
         }
         plazasDiv += '</div>';
 
         return plazasDiv;
     }
     static GetModalidad(presenciales = true, online = false, grabacion = false) {
-        var modalidad = "<div class='modalidad'>";
+        var modalidad = "<span class='modalidad'>";
         
         if (grabacion) {
-            modalidad += "<img src='Imagenes/videoPlayer.svg' />";
+            modalidad += "<img class='modalidadItem' src='Imagenes/videoPlayer.svg' />";
         }
         if (online) {
-            modalidad += " <label>online<label>";
+            modalidad += " <label class='modalidadItem'>online<label>";
         }
         if (presenciales) {
-            modalidad += "<label>presencial</label>";
+            modalidad += "<label class='modalidadItem'>presencial</label>";
         }
     
    
-        modalidad += "</div>";
+        modalidad += "</span>";
         
         return modalidad;
     }
     static GetTituloYSubtitulo(titulo, subtitulo) {
-        return '<div class="tituloYSubtitulo"><label class="titulo colorPrincipal">' + titulo + '</label><label class="subtitulo colorSecundario">' + subtitulo + '</label></div>';
+        return '<div class="tituloYSubtitulo"><div><label class="titulo colorPrincipal">' + titulo + '</label></div><div><label class="subtitulo colorSecundario">' + subtitulo + '</label></div></div>';
     }
     static GetMasInfo(hide = true) {
         var strHide = '';
         if (hide) {
             strHide = "style='display:none'";
         }
-        return '<div class="masInfo" ' + strHide + '><label>Más información</label></div>';
+        return '<span class="masInfo" ' + strHide + '><label>Más información</label></span>';
     }
     static GetMenosInfo(hide = true) {
         var strHide = '';
         if (hide) {
             strHide = "style='display:none'";
         }
-        return '<div class="menosInfo" '+strHide+'><label>Menos información</label></div>';
+        return '<span class="menosInfo" '+strHide+'><label>Menos información</label></span>';
     }
     static GetMasOMenosInfo(masInfoHide = false) {
-        return '<div class="masOMenosInfo">' + Views.GetMasInfo(masInfoHide) + Views.GetMenosInfo(!masInfoHide) + "</div>";
+        return '<span class="masOMenosInfo textoSinDestacar">' + Views.GetMasInfo(masInfoHide) + Views.GetMenosInfo(!masInfoHide) + "</span>";
     }
     static GetDuracionYDescanso(duracion, hayDescanso) {
         var divDuracion = '<div class="duracion">';
         divDuracion += '<label>' + duracion + '</label>';
         if (hayDescanso) {
-            divDuracion += '<label>con descanso</label>';
+            divDuracion += '<label class="descanso textoSinDestacar segundo" >con descanso</label>';
         }
         divDuracion += '</div>';
         return divDuracion;
@@ -73,25 +73,30 @@ class Views {
     
     static GetCursoDiv(curso) {
         var divCurso = '<div id="' + Views.GetId(curso) + '" class="curso">';
-
+        divCurso += '<div><div class="fechaYPlazas">';
         divCurso += Views.GetFechaInicio(curso.Inicio, curso.Fin);
         divCurso += Views.GetPlazas(curso.PlazasPresenciales, curso.PlazasOnline);
+        divCurso += '</div>';
         divCurso += Views.GetDuracionYDescanso(curso.Duracion, curso.HayDescanso);
+        divCurso += '</div>';
         divCurso += Views.GetTituloYSubtitulo(curso.Nombre, curso.Descripcion);
         divCurso += Views.GetContentView(Views.GetId(curso), curso, !window.DicDesplegado['curso']);
         divCurso += Views.GetPrecio(curso.Precio);
         divCurso += Views.GetMasOMenosInfo(window.DicDesplegado['curso']);
         divCurso += Views.GetModalidad(curso.PlazasPresenciales > 0, curso.PlazasOnline > 0, curso.SeGrabara);
+
         divCurso += '</div>';
 
         return divCurso;
     }
     static GetMeditacionDiv(meditacion) {
         var divMeditacion = '<div id="' + Views.GetId(meditacion, 'meditacion') + '" class="meditacion">';
-        
+        divMeditacion += '<div><div class="fechaYPlazas">';
         divMeditacion += Views.GetFechaInicio(meditacion.Fecha);
         divMeditacion += Views.GetPlazas(meditacion.PlazasPresenciales, meditacion.PlazasOnline);
+        divMeditacion += '</div>';
         divMeditacion += Views.GetDuracionYDescanso(meditacion.Duracion, meditacion.HayDescanso);
+        divMeditacion += '</div>';
         divMeditacion += Views.GetTituloYSubtitulo(meditacion.Nombre, meditacion.Descripcion);
         divMeditacion += Views.GetContentView(Views.GetId(meditacion, 'meditacion'), meditacion, !window.DicDesplegado['meditacion']);
         divMeditacion += Views.GetPrecio(meditacion.Precio);
@@ -103,10 +108,12 @@ class Views {
     }
     static GetCirculoDiv(circulo) {
         var divCirculo = '<div id="' + Views.GetId(circulo, 'circulo') + '" class="circulo">';
-
+        divCirculo += '<div><div class="fechaYPlazas">';
         divCirculo += Views.GetFechaInicio(circulo.Fecha);
         divCirculo += Views.GetPlazas(circulo.Plazas);
+        divCirculo += '</div>';
         divCirculo += Views.GetDuracionYDescanso(circulo.Duracion, circulo.HayDescanso);
+        divCirculo += '</div>';
         divCirculo += Views.GetTituloYSubtitulo(circulo.Nombre, circulo.Descripcion);
         divCirculo += Views.GetContentView(Views.GetId(circulo, 'circulo'), circulo, !window.DicDesplegado['circulo']);
         divCirculo += Views.GetPrecio(circulo.Precio);
@@ -119,9 +126,10 @@ class Views {
     
     static GetTerapiaDiv(terapia) {
         var divTerapia = '<div id="' + Views.GetId(terapia,'terapia') + '" class="terapia">';
-
+        divTerapia += '<div><div class="fechaYPlazas">';
         divTerapia += Views.GetFechaInicio();
         divTerapia += Views.GetTituloYSubtitulo(terapia.Nombre, terapia.Descripcion);
+        divTerapia += '</div>';
         divTerapia += Views.GetContentView(Views.GetId(terapia, 'terapia'), terapia, !window.DicDesplegado['terapia']);
         divTerapia += Views.GetPrecio(terapia.Precio);
         divTerapia += Views.GetMasOMenosInfo(window.DicDesplegado['terapia']);
@@ -156,13 +164,13 @@ class Views {
         var ponerInicioYFin = !(inicio == null || fin == null);
         if (inicio != null) {
             if (ponerInicioYFin)
-                divFecha += '<label>Inicio ' + inicio + '</label>';
+                divFecha += '<div><label>Inicio ' + inicio + '</label></div>';
             else
                 divFecha += '<label>' + inicio + '</label>';
         }
         if (fin != null) {
             if (ponerInicioYFin)
-                divFecha += '<label>Fin' + fin + '</label>';
+                divFecha += '<div><label  class="segundo">Fin' + fin + '</label></div>';
             else
                 divFecha += '<label>' + fin + '</label>';
         }
@@ -206,8 +214,8 @@ class Views {
                 else {
 
                     idMediaCarrusel = "media_" + i + "_" + idParent;
-                    divContent += "<div id='" + idMediaCarrusel + "' class='row' ><img id='img_" + idMediaCarrusel + "' class='col-12'  style='display:none;' />";
-                    divContent += "<iframe id='video_" + idMediaCarrusel + "' class='col-12' style='display:none;' ></iframe></div>";
+                    divContent += "<div id='" + idMediaCarrusel + "' class='row' ><img id='img_" + idMediaCarrusel + "' class='col-12 carrusel'  style='display:none;' />";
+                    divContent += "<iframe id='video_" + idMediaCarrusel + "' class='col-12 carrusel' style='display:none;' ></iframe></div>";
                     divContent += Views.getMenu(idMediaCarrusel, 'menuItemSecundarioOff', item.Content[i].Value.length);
 
                 }
@@ -221,6 +229,9 @@ class Views {
     }
     static SetClicContentViewMenus(idParent, item) {
         var idMediaCarrusel;
+
+
+
         for (var i = 0; i < item.Content.length; i++) {
             if (item.Content[i].IsUrl && item.Content[i].Value.length > 1) {
 
@@ -241,6 +252,7 @@ class Views {
     
             }
         }
+        
 
     }
     static getMenu(idParent, itemColorDisabled, arrayDataItemsLength) {

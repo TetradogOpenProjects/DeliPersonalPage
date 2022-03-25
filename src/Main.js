@@ -11,14 +11,18 @@ $(function () {
     Promise.all([Data.GetPresentacion(), Data.GetSimbolos()]).then(data => {
         var presentacion = data[0];
         var simbolos = data[1];
-        addBlock('presentacionAdelaida', null, '<div id="presentacion" style="background-image:url(' + getRandom(presentacion.ImagenesFondo).Path + ')" >' +
-            '<div class="row">' +
-            '<label class="colorPrincipal">Adelaida</label>' +
-            '<img id="imgSimbolo" src="'+getRandom(simbolos)+'"/>' +
-            '<div id="sobreAdelaida" class="texto"><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-            '<div id="fraseInspiradora" class="texto"><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div></div>' 
+        addBlock('presentacionAdelaida', null, '<div id="presentacion" class="row"><img class="fondo col-12" src="' + getRandom(presentacion.ImagenesFondo).Path + '" />' +
+                                                    '<div class="col-12"><div class="row">' +
+                                                        '<label id="tituloWeb" class="colorPrincipal col-12">Adelaida</label>' +
+                                                        '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
+                                                        '<div class="col-12"><div class="row">' +
+                                                            '<div id="sobreAdelaida" class="texto col-4  col-md-3 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
+                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-3 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+                                                        '</div></div>' +
+                                                    '</div>' +
+                                               '</div>',
             
-            );
+            "col-12 col-md-8  offset-md-2");
     });
 
 
@@ -34,7 +38,7 @@ $(function () {
             content += '<p>'+(i+1)+'- ' + origen.Partes[i] + '</p>';
         }
         content += '</div>';
-        addBlock('origenReiki', 'Origen Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '"><img id="imgMaestroReiki" src="' + origen.ImagenMaestro + '" /><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div>');
+        addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><p class="preContent col-8">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content col-8" style="display:none;">' + content + '</div><img id="imgMaestroReiki" class="col-4" src="' + origen.ImagenMaestro + '" />' + Views.GetMasOMenosInfo() + '</div>');
         Views.SetClicMasOMenosInfo(origen, 'origenReiki');
     });
 
@@ -85,7 +89,7 @@ $(function () {
 
     Data.GetLinks().then(links => {
 
-        addBlock('links', null, '<div><a href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a href="' + links.SourceCode +'" target="_blanc" >Source Code</a><a href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a><img id="imgFederacion"  /></div>');
+        addBlock('links', null, '<div><span><a class="textoSinDestacar" href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a class="textoSinDestacar" href="' + links.SourceCode +'" target="_blanc" >Source Code</a><div><a class="textoSinDestacar" href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a></div></span><img id="imgFederacion"  /></div>');
     });
     
     Promise.all([Views.GetImagenesWeb(), Data.GetContactoYMetodosDePago()]).then(data => {
@@ -161,6 +165,15 @@ $(function () {
     console.log('###');
     $('.ui-loader-header').remove();
 
+
+
+
+
+
+
+
+    
+
     function getRandomPos(array) {
         return Math.floor(Math.random() * array.length);
     }
@@ -231,8 +244,8 @@ $(function () {
         }, arrayData,tipo);
     }
 
-    function addBlock(idParent, title, content) {
-        var div = "<div class='col-8 offset-2 col-md-6  offset-md-3 col-lg-5 offset-lg-3'>";
+    function addBlock(idParent, title, content, bootstrap ="col-10 offset-1 col-md-6  offset-md-3 col-lg-5 offset-lg-3") {
+        var div = "<div class='"+bootstrap+"'>";
         if (title != null) {
             div += "<h2>" + title + "</h2>";
         }

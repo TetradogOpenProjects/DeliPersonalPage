@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Satisfy';
+    src: url('Extra/Satisfy-Regular.ttf');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .menuItem {
     width: 10px;
     height: 10px;
@@ -9,6 +27,10 @@
     display: inline;
     padding-left: 25px;
     margin-right: 25px;
+}
+.menu {
+    top:10px;
+    left: 35%;
 }
 
 .menuItemSecundarioOn {
@@ -50,9 +72,6 @@ p {
     width: 100%;
 }
 
-.modalidad img {
-    height: 15px;
-}
 
 #contacto img {
     height: 32px;
@@ -64,15 +83,206 @@ p {
     padding-right: 16px;
 }
 
-#imgSimbolo {
-    height: 50px;
-    width: auto;
-}
+
 
 #imgFederacion {
     height: 50px;
+    position:relative;
+    left:75%;
+    top:-45px;
+    
 }
 
 .fila {
     padding-bottom: 16px;
+}
+
+/*Presentacion*/
+#presentacion {
+    height: 300px;
+}
+
+#tituloWeb {
+    /* Adelaida */
+    background: linear-gradient(180deg, #FFFFFF 47.4%, rgba(255, 255, 255, 0) 100%);
+    text-align: center;
+    width: 100%;
+    height: 64px;
+    font-family: 'Satisfy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+
+}
+
+
+#imgSimbolo {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    right: 50px;
+    top: 61px;
+}
+
+#sobreAdelaida {
+    top: 10px;
+    margin-left: 40px;
+    margin-right: auto;
+    height: 200px;
+}
+
+#fraseInspiradora {
+    display: block;
+    margin-left: auto;
+    margin-right: 40px;
+    top: 50px;
+    height: 120px;
+}
+.fechaYPlazas {
+    position: relative;
+    float: left;
+}
+#sobreAdelaida p {
+    margin-top: 15px;
+}
+
+#fraseInspiradora p {
+    margin-top: 15px;
+}
+
+.texto {
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+}
+
+#presentacion .row {
+    z-index: 1;
+    position: relative;
+}
+
+#presentacion .fondo {
+    object-fit: cover;
+    opacity: 0.65;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 5px;
+}
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+p, label, h2, span, b {
+    font-family: droid-sans, sans-serif;
+}
+
+p {
+    text-align: justify-all;
+}
+
+p {
+    font-size: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+#presentacionAdelaida .row {
+    margin-top: 0px;
+}
+#updateBanner {
+    margin-top: 0px;
+}
+
+#imgMaestroReiki {
+    height: 150px;
+    object-fit: contain;
+}
+
+.duracion {
+  position:relative;
+    float: right;
+}
+.fechaYPlazas {
+    position: relative;
+    float: left;
+}
+.curso .titulo {
+    top: 25%;
+
+}
+.curso .subtitulo {
+    top: 30%;
+}
+.titulo {
+    position: relative;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    width: 100%;
+}
+.subtitulo {
+    position: relative;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    width: 100%;
+}
+.modalidad {
+   float:right;
+   
+}
+.modalidadItem {
+    margin-left: 10px;
+}
+.modalidad img {
+    height: 15px;
+}
+
+.plazas label {
+    position: relative;
+    display: flex;
+    font-size: 10px;
+    line-height: 12px;
+}
+.textoSinDestacar {
+    color:rgba(92, 92, 92, 1);
+}
+.descanso {
+    font-size: 10px;
+    line-height: 5px;
+
+}
+.segundo {
+    display: block;
+    margin-top: -8px;
+}
+.precio {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 25px;
+    line-height: 29px;
+   
+}
+.links {
+    margin: 15px 0px;
 }
