@@ -188,7 +188,7 @@ $(function () {
  
         addBlock(idParent, titulo, content + Views.getMenu(id, 'menuItemPrincipalOff', arrayData.length));
 
-        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data) => {
+        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data,idMedia) => {
             
             var item = data[0];
             var tipo = data[1];

@@ -16,11 +16,24 @@
         },
         {
           "IsUrl": true,
-          "Value": [ "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg" ]
+          "Value": [
+            "Imagenes/Circulos/imgCirculoTerapeutico_1.jpg",
+            "Imagenes/Circulos/imgCirculoTerapeutico_2.jpg",
+            "Imagenes/Circulos/imgCirculoTerapeutico_3.jpg"
+
+          ]
         },
         {
           "IsUrl": false,
           "Value": "Texto pos img"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+            "Imagenes/Circulos/imgCirculoTerapeutico_4.jpg",
+            "Imagenes/Circulos/imgCirculoTerapeutico_5.jpg"
+
+          ]
         }
       ]
     },

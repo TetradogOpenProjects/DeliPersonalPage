@@ -107,7 +107,7 @@ class Views {
         return divMeditacion;
     }
     static GetCirculoDiv(circulo) {
-        var divCirculo = '<div id="' + Views.GetId(circulo, 'circulo') + '" class="circulo">';
+        var divCirculo = '<div id="' + Views.GetId(circulo, 'circulo') + '" class="circulo ">';
         divCirculo += '<div><div class="fechaYPlazas">';
         divCirculo += Views.GetFechaInicio(circulo.Fecha);
         divCirculo += Views.GetPlazas(circulo.Plazas);
@@ -236,15 +236,18 @@ class Views {
             if (item.Content[i].IsUrl && item.Content[i].Value.length > 1) {
 
                 idMediaCarrusel = "media_" + i + "_" + idParent;
-                this.setClickMenu(idMediaCarrusel, 'menuItemSecundarioOn', 'menuItemSecundarioOff', (pathImg) => {
+                this.setClickMenu(idMediaCarrusel, 'menuItemSecundarioOn', 'menuItemSecundarioOff', (pathImg, idMedia) => {
+                  
+                    idMedia = idMedia.replace('item_', '');
+              
                     if (pathImg.indexOf('www.') == -1) {
-                        $("#img_" + idMediaCarrusel).attr('src', pathImg);
-                        $("#video_" + idMediaCarrusel).hide();
-                        $("#img_" + idMediaCarrusel).show();
+                        $("#img_" + idMedia).attr('src', pathImg);
+                        $("#video_" + idMedia).hide();
+                        $("#img_" + idMedia).show();
                     } else {
-                        $("#video_" + idMediaCarrusel).attr('src', pathImg);
-                        $("#video_" + idMediaCarrusel).show();
-                        $("#img_" + idMediaCarrusel).hide();
+                        $("#video_" + idMedia).attr('src', pathImg);
+                        $("#video_" + idMedia).show();
+                        $("#img_" + idMedia).hide();
                     }
                 }, item.Content[i].Value);
                 //ahora pongo el gesto de pasar el item con el dedo
@@ -258,13 +261,13 @@ class Views {
     static getMenu(idParent, itemColorDisabled, arrayDataItemsLength) {
 
         var idMenu = 'menu_' + idParent;
-        var idMenuItemPrefix = 'item_' + idParent + '_';
+        var idMenuItemPrefix = 'item_' + idParent;
 
         var items = '';
 
         for (var i = 0; i < arrayDataItemsLength; i++) {
 
-            items += Views.MenuItem(idMenuItemPrefix + i, {
+            items += Views.MenuItem(idMenuItemPrefix + '_' + i, {
                 'prefix': idMenuItemPrefix,
                 'pos': i,
             }, itemColorDisabled);
@@ -290,14 +293,14 @@ class Views {
 
 
 
-        idMenuItemPrefix = 'item_' + idParent + '_';
+        idMenuItemPrefix = 'item_' + idParent ;
 
         window.DicMenuData[idMenuItemPrefix] = arrayDataItems;
         window.DicMenuMethodUpdate[idMenuItemPrefix] = metodoUpdateItem;
         window.DicMenuItemColors[idMenuItemPrefix] = [itemColorEnable, itemColorDisabled];
 
         for (var i = 0; i < arrayDataItems.length; i++) {
-            idMenuItem = idMenuItemPrefix + i;
+            idMenuItem = idMenuItemPrefix + '_' + i;
 
             $('#' + idMenuItem).click(function () {
 
@@ -309,9 +312,9 @@ class Views {
 
                     for (var j = 0, jF = window.DicMenuData[prefix].length; j < jF; j++) {
                         if (j != pos) {
-                            $('#' + prefix + j).removeClass(window.DicMenuItemColors[prefix][ENABLED]);
-                            $('#' + prefix + j).addClass(window.DicMenuItemColors[prefix][DISABLED]);
-                            $('#' + prefix + j).removeClass(ISON);
+                            $('#' + prefix + '_' + j).removeClass(window.DicMenuItemColors[prefix][ENABLED]);
+                            $('#' + prefix + '_' + j).addClass(window.DicMenuItemColors[prefix][DISABLED]);
+                            $('#' + prefix + '_' + j).removeClass(ISON);
                         }
                     }
 
@@ -319,9 +322,9 @@ class Views {
                     $(this).addClass(window.DicMenuItemColors[prefix][ENABLED]);
                     $(this).addClass(ISON);
                     if(tipo!=null)
-                        window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos],tipo]);
+                        window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos],tipo],prefix);
                     else
-                        window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos]);
+                        window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos],prefix);
 
                 }
 
@@ -329,7 +332,7 @@ class Views {
             });
         }
         //pongo el primer item
-        $('#' + idMenuItemPrefix + '0').click();
+        $('#' + idMenuItemPrefix + '_' + '0').click();
 
 
 
