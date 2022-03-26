@@ -114,7 +114,7 @@ $(function () {
         divContacto += '<a href="https://www.facebook.com/' + contactoYMetodosDePago.Facebook + '" target="_blanc" ><img id="imgFacebook"/></a>';
         divContacto += '</span><span class="fila">';
         divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
-        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a><label> teléfono :' + contactoYMetodosDePago.Telefono + '</label>';
         divContacto += '</span>';
         addBlock('contactoYMetodosDePago', 'Contacto', divContacto);
        
