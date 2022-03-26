@@ -13,7 +13,7 @@
           "CoordenadaY": 0.05
         },
         "PlazasPresenciales": 10,
-        "PlazasOnline": -1,
+        "PlazasOnline": 40,
         "Duracion": "2 horas",
         "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
