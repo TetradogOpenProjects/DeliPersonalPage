@@ -25,12 +25,12 @@
 
 .menu .menuItem {
     display: inline;
-    padding-left: 25px;
+    padding-left: 10px;
     margin-right: 25px;
 }
 .menu {
-    top:2%;
-    left: 35%;
+    margin-top:10px;
+
 }
 
 .menuItemSecundarioOn {
@@ -195,7 +195,7 @@ h2 {
 }
 
 .row {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 #presentacionAdelaida .row {
@@ -290,4 +290,8 @@ h2 {
     opacity:0.35;
     height:250px;
     object-fit:contain;
+}
+
+.plazas{
+    height:24px;
 }

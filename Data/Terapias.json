@@ -45,7 +45,7 @@
 
 
       "EsPresencial": true,
-      "EsOnline": false,
+      "EsOnline": true,
 
       "Content": [
         {

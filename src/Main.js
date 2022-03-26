@@ -1,10 +1,11 @@
 $(function () {
-
+    const SHOWUPDATEBANNER = "showUpdateBanner";
     Views.Init();
    
     $('#container').show();
     $('#updateBanner').click(function () {
         $(this).hide();
+        localStorage.setItem(SHOWUPDATEBANNER, 'true');
     });
 
     //pongo la información de la web
@@ -16,8 +17,8 @@ $(function () {
                                                         '<label id="tituloWeb" class="colorPrincipal col-12">Adelaida</label>' +
                                                         '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
                                                         '<div class="col-12"><div class="row">' +
-                                                            '<div id="sobreAdelaida" class="texto col-4  col-md-3 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-3 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+                                                            '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
+                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
                                                         '</div></div>' +
                                                     '</div>' +
                                                '</div>',
@@ -146,7 +147,7 @@ $(function () {
     
  
 
-    if ('serviceWorker' in navigator) {
+    if ( 'serviceWorker' in navigator) {
         //registro el serviceWorker
 
         
@@ -154,7 +155,10 @@ $(function () {
 
     } else {
         //poner banner para que piense en actualizar el navegador!!
-        $('#updateBanner').show();
+        //compruebo que no lo haya quitado
+        if (localStorage.getItem(SHOWUPDATEBANNER) === null) {
+            $('#updateBanner').show();
+        }
     }
     
 

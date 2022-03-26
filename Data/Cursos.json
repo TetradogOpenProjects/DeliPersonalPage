@@ -30,14 +30,21 @@
           "Value": [
 
             "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
-            "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg",
-            "Imagenes/Cursos/imgCursoReikiUsuiI_3.jpg"
+            "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
 
           ]
         },
         {
           "IsUrl": false,
           "Value": "Despues hay un periodo de purificacion adonde durante 21 dias tienen que hacer una limpieza y dibujar el simbolo cada dia.Despues de los 21 dias cada alumno por separado hara con la maestra de reiki una ceramonia de iniciacion con la intencion de abrir el canal central energetico y reconectar al alumno con la fuente,el universo,a la energia vital universal.A partir de ahy el alumno podra hacer reiki"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Cursos/imgCursoReikiUsuiI_3.jpg"
+
+          ]
         }
 
       ]

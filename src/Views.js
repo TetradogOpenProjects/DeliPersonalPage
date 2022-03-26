@@ -23,7 +23,7 @@ class Views {
             modalidad += "<img class='modalidadItem' src='Imagenes/videoPlayer.svg' />";
         }
         if (online) {
-            modalidad += " <label class='modalidadItem'>online<label>";
+            modalidad += " <label class='modalidadItem'>online</label>";
         }
         if (presenciales) {
             modalidad += "<label class='modalidadItem'>presencial</label>";
@@ -67,8 +67,20 @@ class Views {
         return '<div class="precio"><label>' + precio + ' €</label></div>';
     }
     static GetId(curso, prefix = 'curso') {
-        var id = prefix + '_' + curso.Nombre.replaceAll(' ', '');
+        var id = prefix + '_' + this.ReplaceAll(curso.Nombre,' ', '');
         return id;
+    }
+    /**
+     * Así es compatible con los navegadores viejos
+     * @param {any} str
+     * @param {any} toReplace
+     * @param {any} toSet
+     */
+    static ReplaceAll(str, toReplace, toSet = '') {
+        while (str.includes(toReplace)) {
+            str = str.replace(toReplace, toSet);
+        }
+        return str;
     }
     
     static GetCursoDiv(curso) {
@@ -191,7 +203,7 @@ class Views {
     }
 
     static Menu(id, innerHTML = '') {
-        return '<div id="' + id + '" class="menu col-auto">' + innerHTML + '</div>';
+        return '<div id="' + id + '" class="menu d-flex flex-row justify-content-center alig-items-center ">' + innerHTML + '</div>';
     }
     
     static GetContentView(idParent, item,isHiden=false) {
@@ -223,6 +235,8 @@ class Views {
                 divContent += "<p class='row'>" + item.Content[i].Value + "</p>";
             }
         }
+
+        divContent += "<p class='row'></p>";
         divContent += "</div>";
 
         return divContent;
