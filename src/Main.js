@@ -97,8 +97,8 @@ $(function () {
         var imagenesWeb = data[0];
         var contactoYMetodosDePago = data[1];
 
-        var divContacto = '<div id="contacto"><span class="fila">';
-        var divMetodosDePagos= '<div id="pagos"><span class="fila">';
+        var divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" ><span class="fila">';
+        var divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" ><span class="fila">';
         if (contactoYMetodosDePago.HasWhatsapp) {
             divContacto += '<a href ="https://api.whatsapp.com/send?phone=' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgWhatsapp"/></a>';
         }

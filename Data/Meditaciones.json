@@ -50,8 +50,8 @@
           "CoordenadaY": 0.05
         },
         "PlazasPresenciales": 10,
-        "PlazasOnline": -1,
-        "Duracion": "1:00:00",
+        "PlazasOnline": 40,
+        "Duracion": "1 hora",
         "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
         "SeGrabara": true,

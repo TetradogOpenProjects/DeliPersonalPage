@@ -10,7 +10,7 @@ class Views {
             plazasDiv += '<label>' + presenciales + ' plazas presenciales </label>';
         }
         if (online > 0) {
-            plazasDiv += '<label class="segundo">' + online + 'plazas online </label>';
+            plazasDiv += '<label class="segundo">' + online + ' plazas online </label>';
         }
         plazasDiv += '</div>';
 

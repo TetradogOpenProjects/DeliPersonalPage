@@ -153,7 +153,8 @@ p {
 .texto {
     background-color: rgba(255, 255, 255, 0.76);
     border-radius: 5px;
-    text-align: center;
+    line-height:17px;
+    text-align: justify;
     max-width: 300px;
 }
 
@@ -195,7 +196,7 @@ h2 {
 }
 
 .row {
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 #presentacionAdelaida .row {
@@ -295,3 +296,4 @@ h2 {
 .plazas{
     height:24px;
 }
+
