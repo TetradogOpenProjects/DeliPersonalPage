@@ -292,7 +292,12 @@ h2 {
     height:250px;
     object-fit:contain;
 }
-
+#origenReiki p {
+    margin-left: -15px;
+}
+#origenReiki .masOMenosInfo {
+    margin-left: -15px;
+}
 .plazas{
     height:24px;
 }
