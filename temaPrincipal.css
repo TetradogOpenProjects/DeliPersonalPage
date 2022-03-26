@@ -227,12 +227,14 @@ h2 {
     top: 30%;
 }
 .titulo {
+    margin-top:10px;
     position: relative;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
     text-align: center;
     width: 100%;
+    height:70px;
 }
 .subtitulo {
     position: relative;
@@ -241,6 +243,7 @@ h2 {
     line-height: 23px;
     text-align: center;
     width: 100%;
+    height: 46px;
 }
 .modalidad {
    float:right;
