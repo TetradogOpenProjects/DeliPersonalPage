@@ -3,6 +3,7 @@
     "",
     "\\Data",
     "\\Imagenes",
+    "\\Imagenes\\Circulos",
     "\\Imagenes\\Cursos",
     "\\Imagenes\\Meditaciones",
     "\\Imagenes\\Presentacion",
@@ -10,6 +11,6 @@
     "\\Imagenes\\Terapias",
     "\\src"
   ],
-  "SelectedNode": "\\index.html",
+  "SelectedNode": "\\Data\\Links.json",
   "PreviewInSolutionExplorer": false
 }

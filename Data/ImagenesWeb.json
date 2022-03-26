@@ -46,5 +46,22 @@
   "Telefono": {
     "AtribucionHTML": "<a href='https://www.flaticon.es/iconos-gratis/telefono' title='teléfono iconos'> Teléfono iconos creados por Freepik - Flaticon </a>",
     "Path": "Imagenes/telefono.png"
+  },
+  
+  "FondoCurso": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/fondoCurso.jpg"
+  },
+  "FondoTerapia": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/fondoTerapia.jpg"
+  },
+  "FondoCirculo": {
+    "AtribucionHTML": "<a href='https: //create.vista.com/es/unlimited/stock-photos/502270858/stock-photo-minerals-palo-santo-incense-color/'>Foto Minerales, Palo Santo e incienso sobre fondo de color creado por serezniy</a>",
+    "Path": "Imagenes/fondoCirculo.jpg"
+  },
+  "FondoMeditacion": {
+    "AtribucionHTML": null,
+    "Path": "Imagenes/fondoMeditacion.jpg"
   }
 }

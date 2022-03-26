@@ -103,7 +103,8 @@ $(function () {
         var divMetodosDePagos;
         var imagenesWeb = data[0];
         var contactoYMetodosDePago = data[1];
-
+        var sibling, content;
+        var fondos;
         var divContacto;
         addBlock('contactoYMetodosDePago', 'Contacto', '');
         divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" >';
@@ -165,10 +166,24 @@ $(function () {
         $('#imgTelefono').attr('src', imagenesWeb.Telefono.Path);
         $('#imgFederacion').attr('src', imagenesWeb.FederacionReiki.Path);
 
+
+        //pongo los fondos
+        $('#imgFondoCurso').attr('src', imagenesWeb.FondoCurso.Path);
+        $('#imgFondoTerapia').attr('src', imagenesWeb.FondoTerapia.Path);
+        $('#imgFondoCirculo').attr('src', imagenesWeb.FondoCirculo.Path);
+        $('#imgFondoMeditacion').attr('src', imagenesWeb.FondoMeditacion.Path);
+
+        fondos = ['#imgFondoCurso', '#imgFondoTerapia', '#imgFondoCirculo', '#imgFondoMeditacion'];
+        for (var i = 0; i < fondos.length; i++) {
+            sibling = $(fondos[i]).next();
+            content = $(fondos[i]).detach();
+            sibling.prepend(content);
+        }
+
     });
+    
 
-
-
+    
 
     if ('serviceWorker' in navigator) {
         //registro el serviceWorker
@@ -271,12 +286,13 @@ $(function () {
         }, arrayData, tipo);
     }
 
-    function addBlock(idParent, title, content, bootstrap = "col-10 offset-1 col-md-4 offset-md-4") {
+    function addBlock(idParent, title, content, bootstrap = "col-11  col-md-4 offset-md-4") {
         var div = "<div class='" + bootstrap + "'>";
+        div += "<div class='item'>";
         if (title != null) {
             div += "<h2>" + title + "</h2>";
         }
-        $("#" + idParent).append(div + content + "</div>");
+        $("#" + idParent).append(div + content + "</div>" + "</div>");
     }
 
 

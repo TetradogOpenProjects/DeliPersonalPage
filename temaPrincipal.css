@@ -67,6 +67,14 @@ p {
     font-size: 15px;
 }
 
+.item {
+    position:relative;
+    z-index: 1;
+    margin-left:25px;
+}
+
+
+
 .row iframe {
     height: 300px;
     width: 100%;
@@ -86,10 +94,10 @@ p {
 
 
 #imgFederacion {
-    height: 50px;
+    height: 100px;
     position: absolute;
-    right:3%;
-    top: 5px;
+    right:-7%;
+    top: -5px;
 }
 
 .fila {
@@ -111,8 +119,11 @@ p {
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
+    margin-left:15px;
 
 }
+
+
 
 
 #imgSimbolo {
@@ -162,15 +173,18 @@ p {
     position: relative;
 }
 
-#presentacion .fondo {
+
+.fondo {
     object-fit: cover;
-    opacity: 0.65;
+    opacity: 0.25;
     height: 100%;
     z-index: 0;
     position: absolute;
+
+}
+#presentacion .fondo {
     top: 5px;
 }
-
 
 html, body {
     max-width: 100%;
@@ -192,6 +206,7 @@ p {
 h2 {
     font-size: 25px;
     font-weight: 400;
+
 }
 
 .row {
