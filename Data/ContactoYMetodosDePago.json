@@ -6,8 +6,8 @@
   "Telefono": "656926695",
 
   "HasWhatsapp": true,
-  "HasBizum": false,
-  "Bizum": null,
+  "HasBizum": true,
+  "Bizum": "#",
   "Email": "laluzdelalma@gmail.com",
   "HasPayPal": false,
   "PayPalMe": "AdelaidaCotoVazquez",

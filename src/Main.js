@@ -1,7 +1,7 @@
 $(function () {
     const SHOWUPDATEBANNER = "showUpdateBanner";
     Views.Init();
-   
+
     $('#container').show();
     $('#updateBanner').click(function () {
         $(this).hide();
@@ -13,16 +13,16 @@ $(function () {
         var presentacion = data[0];
         var simbolos = data[1];
         addBlock('presentacionAdelaida', null, '<div id="presentacion" class="row"><img class="fondo col-12" src="' + getRandom(presentacion.ImagenesFondo).Path + '" />' +
-                                                    '<div class="col-12"><div class="row">' +
-                                                        '<label id="tituloWeb" class="colorPrincipal col-12">Adelaida</label>' +
-                                                        '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
-                                                        '<div class="col-12"><div class="row">' +
-                                                            '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-6 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
-                                                        '</div></div>' +
-                                                    '</div>' +
-                                               '</div>',
-            
+            '<div class="col-12"><div class="row">' +
+            '<label id="tituloWeb" class="colorPrincipal col-12">Adelaida</label>' +
+            '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
+            '<div class="col-12"><div class="row">' +
+            '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
+            '<div id="fraseInspiradora" class="texto col-4  col-md-6 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+            '</div></div>' +
+            '</div>' +
+            '</div>',
+
             "col-12 col-md-8  offset-md-2");
     });
 
@@ -36,12 +36,12 @@ $(function () {
         var pos = getRandomPos(origen.Partes);
         var content = '<div class="partesOrigen">';
         var foto = origen.ImagenMaestro;
-        
+
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
             foto = '#';
         }
         for (var i = 0; i < origen.Partes.length; i++) {
-            content += '<p>'+(i+1)+'- ' + origen.Partes[i] + '</p>';
+            content += '<p>' + (i + 1) + '- ' + origen.Partes[i] + '</p>';
         }
         content += '</div>';
         addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><div class="col-8"><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div><img id="imgMaestroReiki" class="col-4" src="' + foto + '" /></div>');
@@ -51,9 +51,9 @@ $(function () {
     Data.GetIntroduccionReiki().then(introduccionReiki => {
 
         addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent row">' +
-                                                                introduccionReiki.Content[0].Value + '</p>' +
-                                                                Views.GetContentView('introduccionReiki', introduccionReiki, true) +
-             '<div class="row">'+  Views.GetMasOMenosInfo() + '</div>' + '</div>');
+            introduccionReiki.Content[0].Value + '</p>' +
+            Views.GetContentView('introduccionReiki', introduccionReiki, true) +
+            '<div class="row">' + Views.GetMasOMenosInfo() + '</div>' + '</div>');
         Views.SetClicMasOMenosInfo(introduccionReiki, 'introduccionReiki');
 
 
@@ -62,8 +62,8 @@ $(function () {
 
 
     Data.GetCursos().then(cursos => {
-        
-        addSlideBlock('Cursos con título oficial','cursos', Views.GetCursoDiv, cursos,'curso');
+
+        addSlideBlock('Cursos con título oficial', 'cursos', Views.GetCursoDiv, cursos, 'curso');
     });
 
     Data.GetTerapias().then(terapias => {
@@ -95,15 +95,22 @@ $(function () {
 
     Data.GetLinks().then(links => {
 
-        addBlock('links', null, '<div><span><a class="textoSinDestacar" href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a class="textoSinDestacar" href="' + links.SourceCode +'" target="_blanc" >Source Code</a><div><a class="textoSinDestacar" href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a></div></span><img id="imgFederacion"  /></div>');
+        addBlock('links', null, '<div><span><a class="textoSinDestacar" href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a class="textoSinDestacar" href="' + links.SourceCode + '" target="_blanc" >Source Code</a><div><a class="textoSinDestacar" href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a></div></span><img id="imgFederacion"  /></div>');
     });
-    
+
     Promise.all([Views.GetImagenesWeb(), Data.GetContactoYMetodosDePago()]).then(data => {
+
+        var divMetodosDePagos;
         var imagenesWeb = data[0];
         var contactoYMetodosDePago = data[1];
 
-        var divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" ><span class="fila">';
-        var divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" ><span class="fila">';
+        var divContacto;
+        addBlock('contactoYMetodosDePago', 'Contacto', '');
+        divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" >';
+
+        divContacto += '<div><div class="row">';
+        divContacto += '<div class="col-12">';
+
         if (contactoYMetodosDePago.HasWhatsapp) {
             divContacto += '<a href ="https://api.whatsapp.com/send?phone=' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgWhatsapp"/></a>';
         }
@@ -112,13 +119,23 @@ $(function () {
         }
         divContacto += '<a href="https://www.instagram.com/' + contactoYMetodosDePago.Instagram + '" target="_blanc" ><img id="imgInstagram"/></a>';
         divContacto += '<a href="https://www.facebook.com/' + contactoYMetodosDePago.Facebook + '" target="_blanc" ><img id="imgFacebook"/></a>';
-        divContacto += '</span><span class="fila">';
+        divContacto += '</div>';
+        divContacto += '</div>';
+        divContacto += '<div class="row">';
+        divContacto += '<div class="col-12">';
         divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
-        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a><label> teléfono :' + contactoYMetodosDePago.Telefono + '</label>';
-        divContacto += '</span>';
-        addBlock('contactoYMetodosDePago', 'Contacto', divContacto);
-       
+        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+        divContacto += '</div>';
 
+        divContacto += '</div>';
+        divContacto += '<div class="row><label class="col-12"> teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
+        divContacto += '</div></div>';
+
+        addBlock('contactoYMetodosDePago', null, divContacto,'offset-2 col-8 col-md-10 offset-md-1');
+
+        divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" >';
+        divMetodosDePagos += '<div class="row">';
+        divMetodosDePagos += '<div class="col-12">';
         if (contactoYMetodosDePago.HasBizum) {
             divMetodosDePagos += '<a href ="' + contactoYMetodosDePago.Bizum + '" target="_blanc" ><img id="imgBizum"/></a>';
         }
@@ -126,8 +143,9 @@ $(function () {
             divMetodosDePagos += '<a href ="https://paypal.me/' + contactoYMetodosDePago.PayPalMe + '" target="_blanc" ><img id="imgPayPal"/></a>';
         }
         divMetodosDePagos += '<img id="imgDinero"/>';
-        divMetodosDePagos += '</span></div>';
-     
+        divMetodosDePagos += '</div>';
+        divMetodosDePagos += '</div>';
+        divMetodosDePagos += '</div>';
         addBlock('contactoYMetodosDePago', 'Métodos de pago', divMetodosDePagos);
 
 
@@ -137,7 +155,7 @@ $(function () {
         $('#imgPayPal').attr('src', imagenesWeb.PayPal.Path);
         $('#imgDinero').attr('src', imagenesWeb.Dinero.Path);
 
-   
+
 
         $('#imgWhatsapp').attr('src', imagenesWeb.Whatsapp.Path);
         $('#imgTelegram').attr('src', imagenesWeb.Telegram.Path);
@@ -145,17 +163,17 @@ $(function () {
         $('#imgFacebook').attr('src', imagenesWeb.Facebook.Path);
         $('#imgGMail').attr('src', imagenesWeb.GMail.Path);
         $('#imgTelefono').attr('src', imagenesWeb.Telefono.Path);
-        $('#imgFederacion') .attr('src', imagenesWeb.FederacionReiki.Path);
+        $('#imgFederacion').attr('src', imagenesWeb.FederacionReiki.Path);
 
     });
 
-    
- 
 
-    if ( 'serviceWorker' in navigator) {
+
+
+    if ('serviceWorker' in navigator) {
         //registro el serviceWorker
 
-        
+
 
 
     } else {
@@ -165,7 +183,7 @@ $(function () {
             $('#updateBanner').show();
         }
     }
-    
+
 
 
 
@@ -181,7 +199,7 @@ $(function () {
 
 
 
-    
+
 
     function getRandomPos(array) {
         return Math.floor(Math.random() * array.length);
@@ -194,15 +212,15 @@ $(function () {
         const PARENTSLIDE = 'parentSlide';
         var id = 'parent_items_' + idParent;
         var content = '<div id="' + id + '" class="' + PARENTSLIDE + '" ></div>';
- 
+
         addBlock(idParent, titulo, content + Views.getMenu(id, 'menuItemPrincipalOff', arrayData.length));
 
-        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data,idMedia) => {
-            
+        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data, idMedia) => {
+
             var item = data[0];
             var tipo = data[1];
-            
-            $('#' + id).html(methodGetOneView(item,tipo));
+
+            $('#' + id).html(methodGetOneView(item, tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
             if (!window.DicSwipe[id]) {
                 window.DicSwipe[id] = true;
@@ -214,14 +232,14 @@ $(function () {
                             menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
                         }
                     }
-                
-                        if ($("#" + menuId + ' :last-child').hasClass(ISON)) {
-                     $("#" + menuId + ' :first-child').click();
-                        } else {
-                            $("#" + menuId + ' .' + ISON).next().click();
 
-                        }
-                    
+                    if ($("#" + menuId + ' :last-child').hasClass(ISON)) {
+                        $("#" + menuId + ' :first-child').click();
+                    } else {
+                        $("#" + menuId + ' .' + ISON).next().click();
+
+                    }
+
 
 
 
@@ -237,30 +255,30 @@ $(function () {
                     }
 
 
-                        if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
-                          $("#" + menuId + ' :last-child').click();
-                        } else {
-                            $("#" + menuId + ' .' + ISON).prev().click();
+                    if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
+                        $("#" + menuId + ' :last-child').click();
+                    } else {
+                        $("#" + menuId + ' .' + ISON).prev().click();
 
-                        }
-                    
+                    }
+
 
 
 
                 });
             }
 
-        }, arrayData,tipo);
+        }, arrayData, tipo);
     }
 
-    function addBlock(idParent, title, content, bootstrap ="col-10 offset-1 col-md-4 offset-md-4") {
-        var div = "<div class='"+bootstrap+"'>";
+    function addBlock(idParent, title, content, bootstrap = "col-10 offset-1 col-md-4 offset-md-4") {
+        var div = "<div class='" + bootstrap + "'>";
         if (title != null) {
             div += "<h2>" + title + "</h2>";
         }
-        $("#" + idParent).append( div + content + "</div>");
+        $("#" + idParent).append(div + content + "</div>");
     }
-    
+
 
 
 

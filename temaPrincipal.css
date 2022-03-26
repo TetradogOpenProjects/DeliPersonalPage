@@ -87,14 +87,13 @@ p {
 
 #imgFederacion {
     height: 50px;
-    position:relative;
-    left:75%;
-    top:-45px;
-    
+    position: absolute;
+    right:3%;
+    top: 5px;
 }
 
 .fila {
-    padding-bottom: 16px;
+  margin-bottom:10px;
 }
 
 /*Presentacion*/
@@ -285,13 +284,14 @@ h2 {
     line-height: 35px;
 }
 
-.links a {
+#links a {
     text-decoration: none;
     font-size: 25px;
     line-height: 29px;
-   
+    margin-right: 10px;
+    display:block;
 }
-.links {
+#links {
     margin: 15px 0px;
 }
 .introduccionReiki img{
@@ -310,4 +310,7 @@ h2 {
 }
 .textFecha{
     width:50px;
+}
+#contacto label {
+    vertical-align: text-top;
 }
