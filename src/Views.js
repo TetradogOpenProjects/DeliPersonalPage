@@ -176,13 +176,13 @@ class Views {
         var ponerInicioYFin = !(inicio == null || fin == null);
         if (inicio != null) {
             if (ponerInicioYFin)
-                divFecha += '<div><label>Inicio ' + inicio + '</label></div>';
+                divFecha += '<div><label><label class="textFecha"> Inicio </label>' + inicio + '</label></div>';
             else
                 divFecha += '<label>' + inicio + '</label>';
         }
         if (fin != null) {
             if (ponerInicioYFin)
-                divFecha += '<div><label  class="segundo">Fin' + fin + '</label></div>';
+                divFecha += '<div  class="segundo2"><label><label class="textFecha"> Fin </label>' + fin + '</label></div>';
             else
                 divFecha += '<label>' + fin + '</label>';
         }

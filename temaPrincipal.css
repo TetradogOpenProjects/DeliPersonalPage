@@ -271,6 +271,10 @@ h2 {
     display: block;
     margin-top: -8px;
 }
+.segundo2 {
+    display: block;
+    margin-top: -20px;
+}
 .precio {
     width: 100%;
     text-align: center;
@@ -301,4 +305,6 @@ h2 {
 .plazas{
     height:24px;
 }
-
+.textFecha{
+    width:50px;
+}
