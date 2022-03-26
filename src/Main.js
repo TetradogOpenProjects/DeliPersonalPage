@@ -18,12 +18,12 @@ $(function () {
                                                         '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
                                                         '<div class="col-12"><div class="row">' +
                                                             '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+                                                            '<div id="fraseInspiradora" class="texto col-4  col-md-6 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
                                                         '</div></div>' +
                                                     '</div>' +
                                                '</div>',
             
-            "col-12 col-md-4  offset-md-4");
+            "col-12 col-md-8  offset-md-2");
     });
 
 
@@ -35,11 +35,16 @@ $(function () {
     Data.GetOrigenReiki().then(origen => {
         var pos = getRandomPos(origen.Partes);
         var content = '<div class="partesOrigen">';
+        var foto = origen.ImagenMaestro;
+        
+        if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+            foto = '#';
+        }
         for (var i = 0; i < origen.Partes.length; i++) {
             content += '<p>'+(i+1)+'- ' + origen.Partes[i] + '</p>';
         }
         content += '</div>';
-        addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><div class="col-8"><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div><img id="imgMaestroReiki" class="col-4" src="' + origen.ImagenMaestro + '" /></div>');
+        addBlock('origenReiki', 'El Origen del Reiki', '<div id="' + Views.GetId(origen, 'origenReiki') + '" class="row" ><div class="col-8"><p class="preContent">' + (pos + 1) + '- ' + origen.Partes[pos] + '</p><div class="content" style="display:none;">' + content + '</div>' + Views.GetMasOMenosInfo() + '</div><img id="imgMaestroReiki" class="col-4" src="' + foto + '" /></div>');
         Views.SetClicMasOMenosInfo(origen, 'origenReiki');
     });
 
