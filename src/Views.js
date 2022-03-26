@@ -139,7 +139,7 @@ class Views {
     static GetTerapiaDiv(terapia) {
         var divTerapia = '<div id="' + Views.GetId(terapia,'terapia') + '" class="terapia">';
         divTerapia += '<div><div class="fechaYPlazas">';
-        divTerapia += Views.GetFechaInicio();
+        divTerapia += Views.GetFechaInicio(null,null,false);
         divTerapia += Views.GetTituloYSubtitulo(terapia.Nombre, terapia.Descripcion);
         divTerapia += '</div>';
         divTerapia += Views.GetContentView(Views.GetId(terapia, 'terapia'), terapia, !window.DicDesplegado['terapia']);
@@ -171,7 +171,7 @@ class Views {
         });
         
     }
-    static GetFechaInicio(inicio = null, fin = null) {
+    static GetFechaInicio(inicio = null, fin = null,proximamente=true) {
         var divFecha = '<div class="fecha">';
         var ponerInicioYFin = !(inicio == null || fin == null);
         if (inicio != null) {
@@ -187,7 +187,11 @@ class Views {
                 divFecha += '<label>' + fin + '</label>';
         }
         if (inicio == null && fin == null) {
-            divFecha += '<label>Concertar cita</label>';
+            if (proximamente) {
+                divFecha += '<label>Próximamente</label>';
+            } else {
+                divFecha += '<label>Concertar cita</label>';
+            }
         }
         divFecha += '</div>';
         return divFecha;
