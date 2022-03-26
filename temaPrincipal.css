@@ -150,7 +150,10 @@ p {
 }
 .parentItem {
     margin-bottom: 17px;
-
+ 
+}
+.parentItem2 {
+    margin-top: 17px;
 }
 .fechaYPlazas {
     position: relative;
