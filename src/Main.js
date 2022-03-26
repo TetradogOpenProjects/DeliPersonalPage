@@ -45,10 +45,10 @@ $(function () {
 
     Data.GetIntroduccionReiki().then(introduccionReiki => {
 
-        addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent">' +
+        addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent row">' +
                                                                 introduccionReiki.Content[0].Value + '</p>' +
                                                                 Views.GetContentView('introduccionReiki', introduccionReiki, true) +
-                                                                Views.GetMasOMenosInfo() + '</div>');
+             '<div class="row">'+  Views.GetMasOMenosInfo() + '</div>' + '</div>');
         Views.SetClicMasOMenosInfo(introduccionReiki, 'introduccionReiki');
 
 
