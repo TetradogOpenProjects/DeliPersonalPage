@@ -118,7 +118,7 @@ p {
     font-family: 'Satisfy';
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 80px;
     margin-left: -1px;
     margin-top: -10px;
 }
@@ -135,7 +135,7 @@ p {
 }
 
 #sobreAdelaida {
-    top: 10px;
+    top:30px;
     margin-left: 40px;
     margin-right: auto;
     height: 200px;
@@ -146,7 +146,7 @@ p {
     margin-left: auto;
     margin-right: 71px;
     top: 50px;
-    height: 120px;
+    height: 150px;
 }
 .parentItem {
     margin-bottom: 17px;
@@ -170,10 +170,12 @@ p {
 .texto {
     background-color: rgba(255, 255, 255, 0.76);
     border-radius: 5px;
-    line-height:17px;
-    text-align: justify;
+    line-height: 17px;
     max-width: 300px;
 }
+    .texto p {
+        text-align: left;
+    }
 
 #presentacion .row {
     z-index: 1;
@@ -207,11 +209,11 @@ p {
 }
 
 p {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 45px;
     font-weight: 400;
 
 }
@@ -255,7 +257,7 @@ h2 {
     margin-top:10px;
     position: relative;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 35px;
     text-align: center;
     width: 100%;
@@ -264,7 +266,7 @@ h2 {
 .subtitulo {
     position: relative;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 23px;
     text-align: center;
     width: 100%;
@@ -284,7 +286,7 @@ h2 {
 .plazas label {
     position: relative;
     display: flex;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 12px;
 }
 .textoSinDestacar {

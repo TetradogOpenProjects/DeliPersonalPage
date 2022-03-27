@@ -20,7 +20,7 @@ $(function () {
             '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
             '<div class="col-12"><div class="row">' +
             '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-            '<div id="fraseInspiradora" class="texto col-4  col-md-6 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+            '<div id="fraseInspiradora" class="texto col-4  col-md-5 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
             '</div></div>' +
             '</div>' +
             '</div>',
@@ -288,7 +288,7 @@ $(function () {
         }, arrayData, tipo);
     }
 
-    function addBlock(idParent, title, content, bootstrap = "col-11  col-md-4 offset-md-4") {
+    function addBlock(idParent, title, content, bootstrap = "col-11  col-md-6 offset-md-3") {
         var div = "<div class='" + bootstrap + "'>";
         div += "<div class='item'>";
         if (title != null) {
