@@ -1,5 +1,7 @@
 $(function () {
     const SHOWUPDATEBANNER = "showUpdateBanner";
+
+    var partes = [];
     Views.Init();
 
     $('#container').show();
@@ -61,24 +63,24 @@ $(function () {
 
 
 
-    Data.GetCursos().then(cursos => {
+    partes[0]=  Data.GetCursos().then(cursos => {
 
         addSlideBlock('Cursos con título oficial', 'cursos', Views.GetCursoDiv, cursos, 'curso');
     });
 
-    Data.GetTerapias().then(terapias => {
+    partes[1] =  Data.GetTerapias().then(terapias => {
 
         addSlideBlock('Terapias', 'terapias', Views.GetTerapiaDiv, terapias, 'terapia');
 
     });
 
-    Data.GetCirculos().then(circulos => {
+    partes[2] =  Data.GetCirculos().then(circulos => {
 
         addSlideBlock('Círculos', 'circulos', Views.GetCirculoDiv, circulos, 'circulo');
 
     });
 
-    Data.GetMeditaciones().then(meditaciones => {
+    partes[3] =  Data.GetMeditaciones().then(meditaciones => {
 
         addSlideBlock('Meditaciones guiadas', 'meditaciones', Views.GetMeditacionDiv, meditaciones, 'meditacion');
     });
@@ -97,91 +99,91 @@ $(function () {
 
         addBlock('links', null, '<div><span><a class="textoSinDestacar" href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a class="textoSinDestacar" href="' + links.SourceCode + '" target="_blanc" >Source Code</a><div><a class="textoSinDestacar" href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a></div></span><img id="imgFederacion"  /></div>');
     });
+    Promise.all(partes).then(() => {
+        Promise.all([Views.GetImagenesWeb(), Data.GetContactoYMetodosDePago()]).then(data => {
 
-    Promise.all([Views.GetImagenesWeb(), Data.GetContactoYMetodosDePago()]).then(data => {
+            var divMetodosDePagos;
+            var imagenesWeb = data[0];
+            var contactoYMetodosDePago = data[1];
+            var sibling, content;
+            var fondos;
+            var divContacto;
+            addBlock('contactoYMetodosDePago', 'Contacto', '');
+            divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" >';
 
-        var divMetodosDePagos;
-        var imagenesWeb = data[0];
-        var contactoYMetodosDePago = data[1];
-        var sibling, content;
-        var fondos;
-        var divContacto;
-        addBlock('contactoYMetodosDePago', 'Contacto', '');
-        divContacto = '<div id="contacto" class="d-flex flex-row justify-content-center alig-items-center" >';
+            divContacto += '<div><div class="row">';
+            divContacto += '<div class="col-12">';
 
-        divContacto += '<div><div class="row">';
-        divContacto += '<div class="col-12">';
+            if (contactoYMetodosDePago.HasWhatsapp) {
+                divContacto += '<a href ="https://api.whatsapp.com/send?phone=' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgWhatsapp"/></a>';
+            }
+            if (contactoYMetodosDePago.HasTelegram) {
+                divContacto += '<a href="https://t.me/' + contactoYMetodosDePago.Telegram + '" target="_blanc" ><img id="imgTelegram"/></a>';
+            }
+            divContacto += '<a href="https://www.instagram.com/' + contactoYMetodosDePago.Instagram + '" target="_blanc" ><img id="imgInstagram"/></a>';
+            divContacto += '<a href="https://www.facebook.com/' + contactoYMetodosDePago.Facebook + '" target="_blanc" ><img id="imgFacebook"/></a>';
+            divContacto += '</div>';
+            divContacto += '</div>';
+            divContacto += '<div class="row">';
+            divContacto += '<div class="col-12">';
+            divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
+            divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+            divContacto += '</div>';
 
-        if (contactoYMetodosDePago.HasWhatsapp) {
-            divContacto += '<a href ="https://api.whatsapp.com/send?phone=' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgWhatsapp"/></a>';
-        }
-        if (contactoYMetodosDePago.HasTelegram) {
-            divContacto += '<a href="https://t.me/' + contactoYMetodosDePago.Telegram + '" target="_blanc" ><img id="imgTelegram"/></a>';
-        }
-        divContacto += '<a href="https://www.instagram.com/' + contactoYMetodosDePago.Instagram + '" target="_blanc" ><img id="imgInstagram"/></a>';
-        divContacto += '<a href="https://www.facebook.com/' + contactoYMetodosDePago.Facebook + '" target="_blanc" ><img id="imgFacebook"/></a>';
-        divContacto += '</div>';
-        divContacto += '</div>';
-        divContacto += '<div class="row">';
-        divContacto += '<div class="col-12">';
-        divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
-        divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
-        divContacto += '</div>';
+            divContacto += '</div>';
+            divContacto += '<div class="row><label class="col-12"> teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
+            divContacto += '</div></div>';
 
-        divContacto += '</div>';
-        divContacto += '<div class="row><label class="col-12"> teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
-        divContacto += '</div></div>';
+            addBlock('contactoYMetodosDePago', null, divContacto, 'offset-2 col-8 col-md-10 offset-md-1');
 
-        addBlock('contactoYMetodosDePago', null, divContacto,'offset-2 col-8 col-md-10 offset-md-1');
-
-        divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" >';
-        divMetodosDePagos += '<div class="row">';
-        divMetodosDePagos += '<div class="col-12">';
-        if (contactoYMetodosDePago.HasBizum) {
-            divMetodosDePagos += '<a href ="' + contactoYMetodosDePago.Bizum + '" target="_blanc" ><img id="imgBizum"/></a>';
-        }
-        if (contactoYMetodosDePago.HasPayPal) {
-            divMetodosDePagos += '<a href ="https://paypal.me/' + contactoYMetodosDePago.PayPalMe + '" target="_blanc" ><img id="imgPayPal"/></a>';
-        }
-        divMetodosDePagos += '<img id="imgDinero"/>';
-        divMetodosDePagos += '</div>';
-        divMetodosDePagos += '</div>';
-        divMetodosDePagos += '</div>';
-        addBlock('contactoYMetodosDePago', 'Métodos de pago', divMetodosDePagos);
-
-
-
-
-        $('#imgBizum').attr('src', imagenesWeb.Bizum.Path);
-        $('#imgPayPal').attr('src', imagenesWeb.PayPal.Path);
-        $('#imgDinero').attr('src', imagenesWeb.Dinero.Path);
+            divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" >';
+            divMetodosDePagos += '<div class="row">';
+            divMetodosDePagos += '<div class="col-12">';
+            if (contactoYMetodosDePago.HasBizum) {
+                divMetodosDePagos += '<a href ="' + contactoYMetodosDePago.Bizum + '" target="_blanc" ><img id="imgBizum"/></a>';
+            }
+            if (contactoYMetodosDePago.HasPayPal) {
+                divMetodosDePagos += '<a href ="https://paypal.me/' + contactoYMetodosDePago.PayPalMe + '" target="_blanc" ><img id="imgPayPal"/></a>';
+            }
+            divMetodosDePagos += '<img id="imgDinero"/>';
+            divMetodosDePagos += '</div>';
+            divMetodosDePagos += '</div>';
+            divMetodosDePagos += '</div>';
+            addBlock('contactoYMetodosDePago', 'Métodos de pago', divMetodosDePagos);
 
 
 
-        $('#imgWhatsapp').attr('src', imagenesWeb.Whatsapp.Path);
-        $('#imgTelegram').attr('src', imagenesWeb.Telegram.Path);
-        $('#imgInstagram').attr('src', imagenesWeb.Instagram.Path);
-        $('#imgFacebook').attr('src', imagenesWeb.Facebook.Path);
-        $('#imgGMail').attr('src', imagenesWeb.GMail.Path);
-        $('#imgTelefono').attr('src', imagenesWeb.Telefono.Path);
-        $('#imgFederacion').attr('src', imagenesWeb.FederacionReiki.Path);
+
+            $('#imgBizum').attr('src', imagenesWeb.Bizum.Path);
+            $('#imgPayPal').attr('src', imagenesWeb.PayPal.Path);
+            $('#imgDinero').attr('src', imagenesWeb.Dinero.Path);
 
 
-        //pongo los fondos
-        $('#imgFondoCurso').attr('src', imagenesWeb.FondoCurso.Path);
-        $('#imgFondoTerapia').attr('src', imagenesWeb.FondoTerapia.Path);
-        $('#imgFondoCirculo').attr('src', imagenesWeb.FondoCirculo.Path);
-        $('#imgFondoMeditacion').attr('src', imagenesWeb.FondoMeditacion.Path);
 
-        fondos = ['#imgFondoCurso', '#imgFondoTerapia', '#imgFondoCirculo', '#imgFondoMeditacion'];
-        for (var i = 0; i < fondos.length; i++) {
-            sibling = $(fondos[i]).next();
-            content = $(fondos[i]).detach();
-            sibling.prepend(content);
-        }
+            $('#imgWhatsapp').attr('src', imagenesWeb.Whatsapp.Path);
+            $('#imgTelegram').attr('src', imagenesWeb.Telegram.Path);
+            $('#imgInstagram').attr('src', imagenesWeb.Instagram.Path);
+            $('#imgFacebook').attr('src', imagenesWeb.Facebook.Path);
+            $('#imgGMail').attr('src', imagenesWeb.GMail.Path);
+            $('#imgTelefono').attr('src', imagenesWeb.Telefono.Path);
+            $('#imgFederacion').attr('src', imagenesWeb.FederacionReiki.Path);
 
+
+            //pongo los fondos
+            $('#imgFondoCurso').attr('src', imagenesWeb.FondoCurso.Path);
+            $('#imgFondoTerapia').attr('src', imagenesWeb.FondoTerapia.Path);
+            $('#imgFondoCirculo').attr('src', imagenesWeb.FondoCirculo.Path);
+            $('#imgFondoMeditacion').attr('src', imagenesWeb.FondoMeditacion.Path);
+
+            fondos = ['#imgFondoCurso', '#imgFondoTerapia', '#imgFondoCirculo', '#imgFondoMeditacion'];
+            for (var i = 0; i < fondos.length; i++) {
+                sibling = $(fondos[i]).next();
+                content = $(fondos[i]).detach();
+                sibling.prepend(content);
+            }
+
+        });
     });
-    
 
     
 
