@@ -422,8 +422,8 @@ h2 {
 
     #sobreAdelaida {
         top: 30px;
-        margin-left: 8px;
-        margin-right: 27px;
+        margin-left: 5px;
+        margin-right: auto;
         height: 200px;
         width: 134px;
     }
@@ -431,14 +431,22 @@ h2 {
 
 }
 
-@media screen and (max-width:294px) {
 
+@media screen and (min-width:341px) {
+    #sobreAdelaida {
+        top: 30px;
+        margin-left: 22px;
+        margin-right: auto;
+        height: 200px;
+        width: 134px;
+    }
 
     #fraseInspiradora {
-
-        margin-left: -7%;
-        margin-right: 31px;
-
+        display: block;
+        margin-left: auto;
+        margin-right: 57px;
+        top: 50px;
+        height: 150px;
     }
 }
 @media screen and (max-width:340px) {
@@ -479,8 +487,8 @@ h2 {
 
     #sobreAdelaida {
         top: 30px;
-        margin-left: 8px;
-        margin-right: 27px;
+        margin-left: 22px;
+        margin-right: auto;
         height: 200px;
         width: 134px;
     }
@@ -488,8 +496,8 @@ h2 {
     #fraseInspiradora {
         display: block;
         top: 50px;
-        margin-left: -6%;
-        margin-right: 13px;
+        margin-left: auto;
+        margin-right: 30px;
         width: 114px;
         height: 179px;
     }
@@ -500,12 +508,19 @@ h2 {
         margin-right: 7px;
     }
 }
-@media screen and (min-width:341px){
+@media screen and (max-width:294px) {
+
+
+    #sobreAdelaida {
+        top: 30px;
+        margin-left: 8px;
+        margin-right: 27px;
+        height: 200px;
+        width: 134px;
+    }
     #fraseInspiradora {
-        display: block;
-        margin-left: auto;
-        margin-right: 13%;
-        top: 50px;
-        height: 150px;
+        margin-left: -24px;
+        margin-right: 0px;
     }
 }
+
