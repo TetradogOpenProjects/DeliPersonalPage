@@ -370,7 +370,7 @@ h2 {
         top: -5px;
     }
 }
-@media screen and (max-width:313px) {
+@media screen and (max-width:351px) {
 
     #imgFederacion {
         height: 70px;
@@ -379,8 +379,13 @@ h2 {
         top: -5px;
     }
 }
+@media screen and (max-width:344px) {
+    .modalidadItem {
+        margin-left: 1px;
+    }
+}
 
-@media screen and (max-width:381px) {
+    @media screen and (max-width:381px) {
 
         .col-3 {
             width: 25%;
@@ -410,26 +415,32 @@ h2 {
             width: 0px;
         }
 
-    h2 {
-        font-size: 30px;
-    }
+        h2 {
+            font-size: 30px;
+        }
 
 
 
-    #sobreAdelaida {
-        top: 30px;
-        margin-left: 8px;
-        margin-right: 27px;
-        height: 200px;
-        width: 134px;
-    }
+        #sobreAdelaida {
+            top: 30px;
+            margin-left: 8px;
+            margin-right: 27px;
+            height: 200px;
+            width: 134px;
+        }
 
-    #fraseInspiradora {
-        display: block;
-        top: 50px;
-        margin-left: -30px;
-        margin-right: -3px;
-        width: 114px;
-        height: 179px;
-    }
+        #fraseInspiradora {
+            display: block;
+            top: 50px;
+            margin-left: -30px;
+            margin-right: -3px;
+            width: 114px;
+            height: 179px;
+        }
+
+        .menu .menuItem {
+            display: inline;
+            padding-left: 10px;
+            margin-right: 7px;
+        }
     }
