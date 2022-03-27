@@ -182,7 +182,6 @@ class Views {
             $('#' + id + ' .content').hide();
             $('#' + id + ' .preContent').show();
             window.DicDesplegado[tipo] = false;
-            //mirar que funcione
             Views.SaltaAAncora($(this).attr('tipo') + 'Principio');
              
      
@@ -195,7 +194,7 @@ class Views {
         var target = $('[name=' + idAncora + ']');
         if (target.length) {
             scrollTo({
-                top: target.offset().top
+                top: (target.offset().top-100)
             });
         }
  

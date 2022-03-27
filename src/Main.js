@@ -9,7 +9,7 @@ $(function () {
     //asi si en el futuro cambio la forma de detactarlo solo lo cambio aqui
     window.EsMobil = navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i) != null;
     window.IsTouch = jQuery.support.touch;
-    window.GetScrollTop = () => document.documentElement.scrollTop || document.body.scrollTop;
+
     
     $('#container').show();
     $('#updateBanner').click(function () {
