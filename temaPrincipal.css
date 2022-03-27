@@ -339,12 +339,7 @@ h2 {
     border-radius: .25rem;
 }
 
-#imgFederacion {
-    height: 100px;
-    position: absolute;
-    right: -7%;
-    top: -5px;
-}
+
 
 #sobreAdelaida {
     top: 30px;
@@ -361,12 +356,21 @@ h2 {
     height: 150px;
 }
 
+@media screen and (min-width:411px) {
+
+    #imgFederacion {
+        height: 100px;
+        position: absolute;
+        right: -7%;
+        top: -5px;
+    }
+}
 @media screen and (max-width:410px) {
 
     #imgFederacion {
         height: 100px;
         position: absolute;
-        right: -28%;
+        right: -10%;
         top: -5px;
     }
 }
@@ -375,10 +379,11 @@ h2 {
     #imgFederacion {
         height: 70px;
         position: absolute;
-        right: -28%;
+        right: -10%;
         top: -5px;
     }
 }
+
 @media screen and (max-width:344px) {
     .modalidadItem {
         margin-left: 1px;
