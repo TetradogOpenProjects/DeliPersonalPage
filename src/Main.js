@@ -9,6 +9,7 @@ $(function () {
     //asi si en el futuro cambio la forma de detactarlo solo lo cambio aqui
     window.EsMobil = navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i) != null;
     window.IsTouch = jQuery.support.touch;
+    window.GetScrollTop = () => document.documentElement.scrollTop || document.body.scrollTop;
     
     $('#container').show();
     $('#updateBanner').click(function () {
@@ -222,7 +223,11 @@ $(function () {
             }
 
         });
+
+
+        
     });
+
 
     
 
@@ -256,7 +261,6 @@ $(function () {
 
 
 
-
     function getRandomPos(array) {
         return Math.floor(Math.random() * array.length);
     }
@@ -278,11 +282,12 @@ $(function () {
 
             $('#' + id).html(methodGetOneView(item, tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
-          
+            console.log('ID', id);
                 if (!window.DicSwipeOrClick[id]) {
                     window.DicSwipeOrClick[id] = true;
                     if (window.IsTouch) {
 
+                        $("#" + id).attr('tipo', tipo);
                         $("#" + id).on("swipeleft", (event) => {
                         var menuId = "menu_" + event.delegateTarget.id;
                         if (event.target.id) {
@@ -290,10 +295,8 @@ $(function () {
                                 menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
                             }
                         }
-                        menuSiguiente(menuId);
-
-
-
+                            menuSiguiente(menuId);
+    
 
                     });
 
@@ -329,7 +332,9 @@ $(function () {
             $("#" + menuId + ' .' + ISON).next().click();
 
         }
+
     }
+
     function menuAnterior(menuId) {
         const ISON = 'isON';
         if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
@@ -338,6 +343,7 @@ $(function () {
             $("#" + menuId + ' .' + ISON).prev().click();
 
         }
+   
     }
     function addBlock(idParent, title, content, bootstrap = " col-11 col-sm-11  col-md-6 offset-md-3") {
         var div = "<div class='" + bootstrap + "'>";

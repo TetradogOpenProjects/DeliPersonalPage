@@ -310,14 +310,22 @@ h2 {
 }
 
 #links a {
-    text-decoration: none;
+   
     font-size: 25px;
     line-height: 29px;
     margin-right: 10px;
     display: block;
 }
 
-#links {
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+    #links {
     margin: 15px 0px;
 }
 

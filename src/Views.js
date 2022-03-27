@@ -49,10 +49,10 @@ class Views {
         if (hide) {
             strHide = "style='display:none'";
         }
-        return '<span class="menosInfo" ' + strHide + '><label>Menos información</label></span>';
+        return '<span class="menosInfo" ' + strHide + '><label >Menos información</label></span>';
     }
-    static GetMasOMenosInfo(masInfoHide = false) {
-        return '<span class="masOMenosInfo textoSinDestacar">' + Views.GetMasInfo(masInfoHide) + Views.GetMenosInfo(!masInfoHide) + "</span>";
+    static GetMasOMenosInfo(masInfoHide = false, ancora = 'introduccionReikiPrincipio') {
+        return '<span class="masOMenosInfo textoSinDestacar">' + Views.GetMasInfo(masInfoHide) + Views.GetMenosInfo(!masInfoHide,ancora) + "</span>";
     }
     static GetDuracionYDescanso(duracion, hayDescanso) {
         var divDuracion = '<div class="duracion">';
@@ -163,7 +163,9 @@ class Views {
         var id = Views.GetId(item, tipo);
         if (item.Content) {
             Views.SetClicContentViewMenus(id, item);
+            
         }
+
         $('#' + id + ' .masInfo').click(function () {
             $('#' + id + ' .masInfo').hide();
             $('#' + id + ' .menosInfo').show();
@@ -171,14 +173,32 @@ class Views {
             $('#' + id + ' .preContent').hide();
             window.DicDesplegado[tipo] = true;
         });
+        $('#' + id + ' .menosInfo').attr('tipo', tipo);
         $('#' + id + ' .menosInfo').click(function () {
+   
+            
             $('#' + id + ' .masInfo').show();
             $('#' + id + ' .menosInfo').hide();
             $('#' + id + ' .content').hide();
             $('#' + id + ' .preContent').show();
             window.DicDesplegado[tipo] = false;
+            //mirar que funcione
+            Views.SaltaAAncora($(this).attr('tipo') + 'Principio');
+             
+     
+            
         });
 
+    }
+    static SaltaAAncora(idAncora) {
+        
+        var target = $('[name=' + idAncora + ']');
+        if (target.length) {
+            scrollTo({
+                top: target.offset().top
+            });
+        }
+ 
     }
     static GetFechaInicio(inicio = null, fin = null, proximamente = true) {
         var divFecha = '<div class="fecha">';
@@ -348,8 +368,15 @@ class Views {
                     $(this).removeClass(window.DicMenuItemColors[prefix][DISABLED]);
                     $(this).addClass(window.DicMenuItemColors[prefix][ENABLED]);
                     $(this).addClass(ISON);
-                    if (tipo != null)
+                    if (tipo != null) {
                         window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos], tipo], prefix);
+                        if (window.DicNotFirstTime[tipo]) {
+                            Views.SaltaAAncora(tipo + 'Principio');
+                        } else {
+                            window.DicNotFirstTime[tipo] = true;
+                        }
+                        
+                    }
                     else
                         window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos], prefix);
 
@@ -377,6 +404,12 @@ class Views {
             'terapia': false,
             'meditacion': false
 
+        };
+        window.DicNotFirstTime = {
+            'circulo': false,
+            'curso': false,
+            'terapia': false,
+            'meditacion': false
         };
 
     }
