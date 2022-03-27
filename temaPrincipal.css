@@ -31,6 +31,7 @@
 
 .menu {
     margin-top: 10px;
+    margin-bottom:5px;
 }
 
 .menuItemSecundarioOn {
@@ -174,10 +175,12 @@ p {
     height: 100%;
     z-index: 0;
     position: absolute;
+  /*  border-radius: 43px; */
 }
 
 #presentacion .fondo {
     top: 5px;
+    border-radius: 0px;
 }
 
 html, body {

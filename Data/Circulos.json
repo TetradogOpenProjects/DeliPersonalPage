@@ -2,7 +2,7 @@
   "Circulos": [
     {
       "Nombre": "Terapeuticos",
-      "Fecha": "20/05/22 7:50:0",
+      "Fecha": null,
       "Descripcion": "Sanación",
       "Plazas": 15,
       "Precio": 30,
