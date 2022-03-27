@@ -11,7 +11,7 @@
 
                 for (var i = 0; i < presentacion.ImagenesFondo.length; i++) {
                     if (presentacion.ImagenesFondo[i].AtribucionHTML != null) {
-                        $('body').append('<div>'+presentacion.ImagenesFondo[i].AtribucionHTML+'</div>');
+                        $('body').append('<div><img    src="' + presentacion.ImagenesFondo[i].Path + '"/><div>' + presentacion.ImagenesFondo[i].AtribucionHTML + '</div>' + '</div>');
                     }
                 }
             });
@@ -20,7 +20,7 @@
                 for (var clave in imgs) {
                     // Controlando que json realmente tenga esa propiedad
                     if (imgs.hasOwnProperty(clave) && imgs[clave].AtribucionHTML != null) {
-                        $('body').append('<div>' + imgs[clave].AtribucionHTML + '</div>' );
+                        $('body').append('<div><img    src="' + imgs[clave].Path + '"/><div>' + imgs[clave].AtribucionHTML + '</div>'  + '</div>' );
                     }
                 }
 
@@ -32,6 +32,13 @@
 
         });
     </script>
+    <style>
+        img{
+            height:50px;
+            width:auto;
+            object-fit:cover;
+        }
+    </style>
 </head>
 <body>
     <h1>Licencias Software</h1>
