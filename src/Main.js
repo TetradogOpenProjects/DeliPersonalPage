@@ -339,7 +339,7 @@ $(function () {
 
         }
     }
-    function addBlock(idParent, title, content, bootstrap = " col-10 col-sm-11  col-md-6 offset-md-3") {
+    function addBlock(idParent, title, content, bootstrap = " col-11 col-sm-11  col-md-6 offset-md-3") {
         var div = "<div class='" + bootstrap + "'>";
         div += "<div class='item'>";
         if (title != null) {
