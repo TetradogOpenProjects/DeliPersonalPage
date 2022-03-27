@@ -4,6 +4,8 @@ $(function () {
     var partes = [];
     Views.Init();
 
+    window.EsMobil = navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i) != null;
+
     $('#container').show();
     $('#updateBanner').click(function () {
         $(this).hide();
@@ -126,12 +128,27 @@ $(function () {
             divContacto += '</div>';
             divContacto += '<div class="row">';
             divContacto += '<div class="col-12">';
-            divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
-            divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+            if (window.EsMobil) {
+                divContacto += '<a href="mailto:' + contactoYMetodosDePago.Email + '" target="_blanc" ><img id="imgGMail"/></a>';
+         
+                divContacto += '<a href="tel:+34' + contactoYMetodosDePago.Telefono + '" target="_blanc" ><img id="imgTelefono"/></a>';
+             }
             divContacto += '</div>';
 
             divContacto += '</div>';
-            divContacto += '<div class="row><label class="col-12"> teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
+            if (!window.EsMobil) {
+                divContacto += '<div class="row"><div class="col-10"><label > email :' + contactoYMetodosDePago.Email + '</label></div>';
+                if (navigator.clipboard) {
+                    divContacto += '<div class=" col-2"> <button id="btnCopiarEmail" type="button" class="btn-clipboard" title="" data-bs-original-title="Copiar en el portapapeles">Copiar</button></div>';
+                }
+                divContacto += '</div>';
+                divContacto += '<div class="row"><div class="col-10"><label > teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
+                if (navigator.clipboard) {
+                    divContacto += '<div class=" col-2"> <button id="btnCopiarNumero" type="button" class="btn-clipboard" title="" data-bs-original-title="Copiar en el portapapeles">Copiar</button></div>';
+                }
+                divContacto +='</div>';
+                
+            }
             divContacto += '</div></div>';
 
             addBlock('contactoYMetodosDePago', null, divContacto, 'offset-2 col-8 col-md-10 offset-md-1');
@@ -152,8 +169,26 @@ $(function () {
             addBlock('contactoYMetodosDePago', 'Métodos de pago', divMetodosDePagos);
 
 
+            $('#btnCopiarNumero').click(function () {
+                Data.GetContactoYMetodosDePago().then(contacto => {
+
+                    //copy into the clipboard
+                    navigator.clipboard.writeText(contacto.Telefono);
+                    $('#btnCopiarNumero').blur();
+                });
+               
+
+            });
+            $('#btnCopiarEmail').click(function () {
+                Data.GetContactoYMetodosDePago().then(contacto => {
+
+                    //copy into the clipboard
+                    navigator.clipboard.writeText(contacto.Email);
+                    $('#btnCopiarEmail').blur();
+                });
 
 
+            });
             $('#imgBizum').attr('src', imagenesWeb.Bizum.Path);
             $('#imgPayPal').attr('src', imagenesWeb.PayPal.Path);
             $('#imgDinero').attr('src', imagenesWeb.Dinero.Path);
