@@ -25,13 +25,13 @@ $(function () {
             '<label id="tituloWeb" class="colorPrincipal col-12">Adelaida</label>' +
             '<img id="imgSimbolo" src="' + getRandom(simbolos) + '"/>' +
             '<div class="col-12"><div class="row">' +
-            '<div id="sobreAdelaida" class="texto col-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
-            '<div id="fraseInspiradora" class="texto col-4  col-md-5 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
+            '<div id="sobreAdelaida" class="texto col-3 col-sm-4  col-md-4 "><p>' + getRandom(presentacion.SobreAdelaida) + '</p></div>' +
+            '<div id="fraseInspiradora" class="texto col-3 col-sm-4  col-md-5 "><p>' + getRandom(presentacion.FrasesInspiradoras) + '</p></div>' +
             '</div></div>' +
             '</div>' +
             '</div>',
 
-            "col-12 col-md-8  offset-md-2");
+            "col-12 col-sm-12 col-md-8  offset-md-2");
     });
 
 
@@ -155,7 +155,7 @@ $(function () {
             }
             divContacto += '</div></div>';
 
-            addBlock('contactoYMetodosDePago', null, divContacto, 'offset-2 col-8 col-md-10 offset-md-1');
+            addBlock('contactoYMetodosDePago', null, divContacto, 'col-10 col-md-10 offset-md-1');
 
             divMetodosDePagos = '<div id="pagos" class="d-flex flex-row justify-content-center alig-items-center" >';
             divMetodosDePagos += '<div class="row">';
@@ -339,7 +339,7 @@ $(function () {
 
         }
     }
-    function addBlock(idParent, title, content, bootstrap = "col-11  col-md-6 offset-md-3") {
+    function addBlock(idParent, title, content, bootstrap = " col-10 col-sm-11  col-md-6 offset-md-3") {
         var div = "<div class='" + bootstrap + "'>";
         div += "<div class='item'>";
         if (title != null) {

@@ -93,12 +93,7 @@ p {
 
 
 
-#imgFederacion {
-    height: 100px;
-    position: absolute;
-    right:-7%;
-    top: -5px;
-}
+
 
 .fila {
   margin-bottom:10px;
@@ -134,20 +129,7 @@ p {
     top: 65px;
 }
 
-#sobreAdelaida {
-    top:30px;
-    margin-left: 40px;
-    margin-right: auto;
-    height: 200px;
-}
 
-#fraseInspiradora {
-    display: block;
-    margin-left: auto;
-    margin-right: 71px;
-    top: 50px;
-    height: 150px;
-}
 .parentItem {
     margin-bottom: 17px;
  
@@ -356,3 +338,98 @@ h2 {
     border: 1px solid;
     border-radius: .25rem;
 }
+
+#imgFederacion {
+    height: 100px;
+    position: absolute;
+    right: -7%;
+    top: -5px;
+}
+
+#sobreAdelaida {
+    top: 30px;
+    margin-left: 40px;
+    margin-right: auto;
+    height: 200px;
+}
+
+#fraseInspiradora {
+    display: block;
+    margin-left: auto;
+    margin-right: 71px;
+    top: 50px;
+    height: 150px;
+}
+
+@media screen and (max-width:410px) {
+
+    #imgFederacion {
+        height: 100px;
+        position: absolute;
+        right: -28%;
+        top: -5px;
+    }
+}
+@media screen and (max-width:313px) {
+
+    #imgFederacion {
+        height: 70px;
+        position: absolute;
+        right: -28%;
+        top: -5px;
+    }
+}
+
+@media screen and (max-width:381px) {
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="offset-"] {
+            width: 0px;
+        }
+
+    h2 {
+        font-size: 30px;
+    }
+
+
+
+    #sobreAdelaida {
+        top: 30px;
+        margin-left: 8px;
+        margin-right: 27px;
+        height: 200px;
+        width: 134px;
+    }
+
+    #fraseInspiradora {
+        display: block;
+        top: 50px;
+        margin-left: -30px;
+        margin-right: -3px;
+        width: 114px;
+        height: 179px;
+    }
+    }
