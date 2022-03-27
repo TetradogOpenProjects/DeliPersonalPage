@@ -8,8 +8,8 @@
         "CoordenadaY": 3.0333
       },
       "Precio": 149.99,
-      "FechaInicio": "20/05/22 7:00",
-      "FechaFin": "30/05/22 7:00",
+      "FechaInicio": null,
+      "FechaFin": null,
       "Duracion": "5 Horas",
       "HayDescanso": true,
       "CursosPrevios": [],
@@ -57,8 +57,8 @@
         "CoordenadaY": 3.0333
       },
       "Precio": 149.99,
-      "FechaInicio": "20/05/22 7:00",
-      "FechaFin": "30/05/22 7:00",
+      "FechaInicio": null,
+      "FechaFin": null,
       "Duracion": "5 Horas",
       "HayDescanso": true,
       "CursosPrevios": [],
@@ -102,14 +102,14 @@
     },
     {
       "Nombre": "Reiki Usui III",
-      "Descripcion": "El regreso a casa",
+      "Descripcion": "La Realizacion",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
       "Precio": 149.99,
-      "FechaInicio": "20/05/22 7:00",
-      "FechaFin": "30/05/22 7:00",
+      "FechaInicio": null,
+      "FechaFin": null,
       "Duracion": "5 Horas",
       "HayDescanso": true,
       "CursosPrevios": [],
@@ -160,15 +160,15 @@
       ]
     },
     {
-      "Nombre": "Hadas y Elementales",
-      "Descripcion": "El despertar",
+      "Nombre": "Reiki Usui Maestria",
+      "Descripcion": "El Maestro Interior",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
       "Precio": 149.99,
-      "FechaInicio": "20/05/22 7:00",
-      "FechaFin": "30/05/22 7:00",
+      "FechaInicio": null,
+      "FechaFin": null,
       "Duracion": "5 Horas",
       "HayDescanso": true,
       "CursosPrevios": [],
@@ -182,7 +182,63 @@
       "Content": [
         {
           "IsUrl": false,
-          "Value": "El primer nivel es la reconexion mas alla de toda explicacion didactitica convertirse en canal requiere una conexion entre nuestro sistema energetico y y la energia universal.Primera toma de contacto con el alumno o alumnos para hacer entrega del dossier y explicar detalles que no estan en el libro.Enseñar el simbolo del primer nivel y como se dibuja."
+          "Value": "En este nivel se conoce un nuevo simbolo que se utiliza para en el proceso de pase de los alineamientos.Ademas de aprender a sanar con la energia Divina."
+        },
+        {
+          "IsUrl": false,
+          "Value": "Con la maestria podras iniciar como terapeuta o mejor dicho quedara despertada la capacidad de hacer Reiki  que ya de por si el Reiki forma parte del ser humano progamado en nuestro ADN."
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Cursos/imgCursoReikiUsuiMaestria_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "La Maestria se haze individual y personalizada a cada persona."
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Cursos/imgCursoReikiUsuiMaestria_2.jpg"
+
+          ]
+        }
+
+      ]
+    },
+    {
+      "Nombre": "Hadas y Elementales",
+      "Descripcion": "Naturaleza",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 149.99,
+      "FechaInicio":null,
+      "FechaFin": null,
+      "Duracion": "5 Horas",
+      "HayDescanso": true,
+      "CursosPrevios": [],
+      "PlazasPresenciales": 10,
+      "PlazasOnline": -1,
+      "AccesoAGrabacionIncluido": false,
+      "SeGrabara": false,
+      "FechaReservas": "14/05/2022 0:00:00",
+      "FechaVisible": "10/05/2022 0:00:00",
+      "Banners": [],
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "Que es el reiki de las hadas y elementales?"
+        },
+        {
+          "IsUrl": false,
+          "Value": "Se trabaja con los elementos y los espiritus elementales de la naturaleza que viven entre nosotros en otra dimension.En el trascurso de este curso nos iniciaremos hacia los Munfos Superiores  a traves de los elementos y sus seres  hasta el punto de dominar sus fuerzas si estas preparado para ascender a otros niveles de desarrollo."
         },
         {
           "IsUrl": true,
@@ -197,7 +253,7 @@
         },
         {
           "IsUrl": false,
-          "Value": "Despues hay un periodo de purificacion adonde durante 21 dias tienen que hacer una limpieza y dibujar el simbolo cada dia.Despues de los 21 dias cada alumno por separado hara con la maestra de reiki una ceramonia de iniciacion con la intencion de abrir el canal central energetico y reconectar al alumno con la fuente,el universo,a la energia vital universal.A partir de ahy el alumno podra hacer reiki"
+          "Value": "Elementos(agua,aire,tierra,fuego,eter) Conoceremos a los gnomos,silfides,salamandras,elfos,ondinas, y mas seres elementales.El Curso es de dos dias."
         },
         {
           "IsUrl": true,
@@ -206,6 +262,10 @@
             "Imagenes/Cursos/imgReikiHadasYElementales_5.jpg"
 
           ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "Primer dia:Primera toma de contacto y entrega del dossier,explicacion de metodologiaSegundo dia:iniciacionEn este curso no hay niveles se aprenden los 6 simbolos mayotes de la naturaleza.Se haze en el exterior en un lugar consagrado adonde invoco los 5 elementos para la ocasion.Solo se haze una vez al año este curso En mayo que es Beltane."
         }
 
       ]

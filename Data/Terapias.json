@@ -35,22 +35,22 @@
       ]
     },
     {
-      "Nombre": "Masage de Meridianos2",
-      "Descripcion": "Desbloquea la afluencia de energia que recorre todos tus meridianos",
+      "Nombre": "Reflexologia",
+      "Descripcion": "fisica y energetica",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
-
+      "Precio": 30,
+      "Duracion": "3/4 hora",
 
       "EsPresencial": true,
-      "EsOnline": true,
+      "EsOnline": false,
 
       "Content": [
         {
           "IsUrl": false,
-          "Value": "El primer nivel es la reconexion mas alla de toda explicacion didactitica convertirse en canal requiere una conexion entre nuestro sistema energetico y y la energia universal.Primera toma de contacto con el alumno o alumnos para hacer entrega del dossier y explicar detalles que no estan en el libro.Enseñar el simbolo del primer nivel y como se dibuja."
+          "Value": "En Egipto ya utilizaban este metodo holistico que trata la glovalidad del cuerpo humano,friccionando en una zona concreta  para conseguir aliviar o relajar a la persona."
         },
         {
           "IsUrl": true,
@@ -63,7 +63,7 @@
         },
         {
           "IsUrl": false,
-          "Value": "Despues hay un periodo de purificacion adonde durante 21 dias tienen que hacer una limpieza y dibujar el simbolo cada dia.Despues de los 21 dias cada alumno por separado hara con la maestra de reiki una ceramonia de iniciacion con la intencion de abrir el canal central energetico y reconectar al alumno con la fuente,el universo,a la energia vital universal.A partir de ahy el alumno podra hacer reiki"
+          "Value": "Este metodo consiste en activar las energias del cuerpo a traves de la presion de puntos reflejos del pie.Estos puntos reflejan todas las lineas transversales y nos permiter situar a organos,visceras,y otras estructuras que atraviesan por encima."
         }
 
       ]

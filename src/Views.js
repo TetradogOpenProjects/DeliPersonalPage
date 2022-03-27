@@ -88,9 +88,10 @@ class Views {
 
         var plazasOnline = 0, plazasPresenciales = 0;
         var divItem = '<div id="' + Views.GetId(item, type) + '" class="' + type + '">';
-        
+
         if ((item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) && (item.hasOwnProperty('Fecha') || (item.hasOwnProperty('FechaInicio') && item.hasOwnProperty('FechaFin')))) {
             divItem += '<div><div class="fechaYPlazas">';
+            divItem += '<div class="row">';
             if (item.hasOwnProperty('Fecha')) {
                 divItem += Views.GetFechaInicio(item.Fecha);
             } else {
@@ -102,20 +103,32 @@ class Views {
             if (item.hasOwnProperty('PlazasOnline')) {
                 plazasOnline = item.PlazasOnline;
             }
+            divItem += '</div>';
+            divItem += '<div class="row">';
             divItem += Views.GetPlazas(plazasPresenciales, plazasOnline);
+            divItem += '</div>';
             divItem += '</div>';
         } else if (item.hasOwnProperty('Plazas') && item.hasOwnProperty('Fecha')) {
             divItem += '<div><div class="fechaYPlazas">';
+            divItem += '<div class="row">';
             divItem += Views.GetFechaInicio(item.Fecha);
+            divItem += '</div>';
+            divItem += '<div class="row">';
             divItem += Views.GetPlazas(item.Plazas);
             divItem += '</div>';
+            divItem += '</div>';
         } else {
-            divItem += Views.GetFechaInicio(null,null,false);
+            divItem += '<div>';
+            divItem += Views.GetFechaInicio(null, null, false);
+
         }
         if (item.hasOwnProperty('Duracion')) {
-            divItem += Views.GetDuracionYDescanso(item.Duracion, item.HayDescanso);
-            divItem += '</div>';
+            divItem += Views.GetDuracionYDescanso(item.Duracion, item.hasOwnProperty('HayDescanso') && item.HayDescanso);
+
         }
+
+        divItem += '</div>';
+
         divItem += Views.GetTituloYSubtitulo(item.Nombre, item.Descripcion);
         divItem += Views.GetContentView(Views.GetId(item, type), item, !window.DicDesplegado[type]);
         divItem += Views.GetPrecio(item.Precio);

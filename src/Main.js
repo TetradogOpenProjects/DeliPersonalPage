@@ -137,12 +137,12 @@ $(function () {
 
             divContacto += '</div>';
             if (!window.EsMobil) {
-                divContacto += '<div class="row"><div class="col-10"><label > email :' + contactoYMetodosDePago.Email + '</label></div>';
+                divContacto += '<div class="row"><div class="col-10"><label > email: ' + contactoYMetodosDePago.Email + '</label></div>';
                 if (navigator.clipboard) {
                     divContacto += '<div class=" col-2"> <button id="btnCopiarEmail" type="button" class="btn-clipboard" title="" data-bs-original-title="Copiar en el portapapeles">Copiar</button></div>';
                 }
                 divContacto += '</div>';
-                divContacto += '<div class="row"><div class="col-10"><label > teléfono :' + contactoYMetodosDePago.Telefono + '</label></div>';
+                divContacto += '<div class="row"><div class="col-10"><label > teléfono: ' + contactoYMetodosDePago.Telefono + '</label></div>';
                 if (navigator.clipboard) {
                     divContacto += '<div class=" col-2"> <button id="btnCopiarNumero" type="button" class="btn-clipboard" title="" data-bs-original-title="Copiar en el portapapeles">Copiar</button></div>';
                 }
