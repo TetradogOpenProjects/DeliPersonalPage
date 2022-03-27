@@ -236,7 +236,7 @@ $(function () {
         //poner banner para que piense en actualizar el navegador!!
         //compruebo que no lo haya quitado
         if (localStorage.getItem(SHOWUPDATEBANNER) === null) {
-            $('#updateBanner').show();
+           // $('#updateBanner').show();//de momento no lo detecta bien...
         }
     }
 
