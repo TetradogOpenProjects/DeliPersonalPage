@@ -4,8 +4,10 @@ $(function () {
     var partes = [];
     Views.Init();
 
+    //asi si en el futuro cambio la forma de detactarlo solo lo cambio aqui
     window.EsMobil = navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i) != null;
-
+    window.IsTouch = jQuery.support.touch;
+    
     $('#container').show();
     $('#updateBanner').click(function () {
         $(this).hide();
@@ -274,50 +276,54 @@ $(function () {
 
             $('#' + id).html(methodGetOneView(item, tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
-            if (!window.DicSwipe[id]) {
-                window.DicSwipe[id] = true;
-                $("#" + id).on("swipeleft", (event) => {
-                    const ISON = 'isON';
-                    var menuId = "menu_" + event.delegateTarget.id;
-                    if (event.target.id) {
-                        if (event.target.id.includes('media_')) {
-                            menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
+            if (window.IsTouch) {
+                if (!window.DicSwipe[id]) {
+                    window.DicSwipe[id] = true;
+                    $("#" + id).on("swipeleft", (event) => {
+                        const ISON = 'isON';
+                        var menuId = "menu_" + event.delegateTarget.id;
+                        if (event.target.id) {
+                            if (event.target.id.includes('media_')) {
+                                menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
+                            }
                         }
-                    }
 
-                    if ($("#" + menuId + ' :last-child').hasClass(ISON)) {
-                        $("#" + menuId + ' :first-child').click();
-                    } else {
-                        $("#" + menuId + ' .' + ISON).next().click();
+                        if ($("#" + menuId + ' :last-child').hasClass(ISON)) {
+                            $("#" + menuId + ' :first-child').click();
+                        } else {
+                            $("#" + menuId + ' .' + ISON).next().click();
 
-                    }
-
-
-
-
-                });
-
-                $("#" + id).on("swiperight", (event) => {
-                    const ISON = 'isON';
-                    var menuId = "menu_" + event.delegateTarget.id;
-                    if (event.target.id) {
-                        if (event.target.id.includes('media_')) {
-                            menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
                         }
-                    }
-
-
-                    if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
-                        $("#" + menuId + ' :last-child').click();
-                    } else {
-                        $("#" + menuId + ' .' + ISON).prev().click();
-
-                    }
 
 
 
 
-                });
+                    });
+
+                    $("#" + id).on("swiperight", (event) => {
+                        const ISON = 'isON';
+                        var menuId = "menu_" + event.delegateTarget.id;
+                        if (event.target.id) {
+                            if (event.target.id.includes('media_')) {
+                                menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
+                            }
+                        }
+
+
+                        if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
+                            $("#" + menuId + ' :last-child').click();
+                        } else {
+                            $("#" + menuId + ' .' + ISON).prev().click();
+
+                        }
+
+
+
+
+                    });
+                }
+            } else {
+                //poner algo para moverse de izquierda a derecha y viceversa 
             }
 
         }, arrayData, tipo);
