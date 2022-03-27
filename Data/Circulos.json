@@ -3,7 +3,7 @@
     {
       "Nombre": "Terapeuticos",
       "Fecha": null,
-      "Descripcion": "Sanación",
+      "Descripcion": "",
       "Plazas": 15,
       "Precio": 30,
       "Duracion": "5 Horas",
@@ -34,30 +34,6 @@
             "Imagenes/Circulos/imgCirculoTerapeutico_5.jpg"
 
           ]
-        }
-      ]
-    },
-    {
-      "Nombre": "Terapeuticos2",
-      "Fecha": "20/05/22 7:50:0",
-      "Descripcion": "Sanación",
-      "Plazas": 15,
-      "Precio": 30,
-      "Duracion": "5 Horas",
-      "HayDescanso": true,
-      "SeGraba": false,
-      "Content": [
-        {
-          "IsUrl": false,
-          "Value": "Texto pre img"
-        },
-        {
-          "IsUrl": true,
-          "Value": [ "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg" ]
-        },
-        {
-          "IsUrl": false,
-          "Value": "Texto pos img"
         }
       ]
     }

@@ -2,12 +2,12 @@
   "Cursos": [
     {
       "Nombre": "Reiki Usui I",
-      "Descripcion": "El despertar",
+      "Descripcion": "El Despertar",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
+      "Precio": 120,
       "FechaInicio": null,
       "FechaFin": null,
       "Duracion": "5 Horas",
@@ -51,12 +51,12 @@
     },
     {
       "Nombre": "Reiki Usui II",
-      "Descripcion": "La transformación",
+      "Descripcion": "La Transformación",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
+      "Precio":120,
       "FechaInicio": null,
       "FechaFin": null,
       "Duracion": "5 Horas",
@@ -102,12 +102,12 @@
     },
     {
       "Nombre": "Reiki Usui III",
-      "Descripcion": "La Realizacion",
+      "Descripcion": "La Realización",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
+      "Precio": 120,
       "FechaInicio": null,
       "FechaFin": null,
       "Duracion": "5 Horas",
@@ -166,7 +166,7 @@
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
+      "Precio": 300,
       "FechaInicio": null,
       "FechaFin": null,
       "Duracion": "5 Horas",
@@ -213,13 +213,13 @@
     },
     {
       "Nombre": "Reiki Hadas y Elementales",
-      "Descripcion": "Naturaleza",
+      "Descripcion": "&#129498;",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
-      "FechaInicio":null,
+      "Precio": 120,
+      "FechaInicio": null,
       "FechaFin": null,
       "Duracion": "5 Horas",
       "HayDescanso": true,
@@ -259,7 +259,8 @@
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Cursos/imgReikiHadasYElementales_5.jpg"
+            "Imagenes/Cursos/imgReikiHadasYElementales_5.jpg",
+            "Imagenes/Cursos/imgReikiHadasYElementales_6.jpg"
 
           ]
         },

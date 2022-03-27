@@ -282,7 +282,7 @@ $(function () {
 
             $('#' + id).html(methodGetOneView(item, tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
-            console.log('ID', id);
+
                 if (!window.DicSwipeOrClick[id]) {
                     window.DicSwipeOrClick[id] = true;
                     if (window.IsTouch) {

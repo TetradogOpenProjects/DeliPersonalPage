@@ -7,8 +7,8 @@
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
       },
-      "Precio": 149.99,
-
+      "Precio": 70,
+      "Duracion": "2 horas",
 
       "EsPresencial": true,
       "EsOnline": false,
@@ -36,7 +36,7 @@
     },
     {
       "Nombre": "Reflexologia",
-      "Descripcion": "fisica y energetica",
+      "Descripcion": "Fisica y Energetica",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
@@ -64,6 +64,143 @@
         {
           "IsUrl": false,
           "Value": "Este metodo consiste en activar las energias del cuerpo a traves de la presion de puntos reflejos del pie.Estos puntos reflejan todas las lineas transversales y nos permiter situar a organos,visceras,y otras estructuras que atraviesan por encima."
+        }
+
+      ]
+    },
+    {
+      "Nombre": "Limpieza energetica con pendulo hebreo",
+      "Descripcion": "Casas y personas",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 20,
+      "Duracion": "30-40 min",
+
+      "EsPresencial": false,
+      "EsOnline": true,
+
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "texto antes imgs"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "texto después"
+        }
+
+      ]
+    },
+   
+    {
+      "Nombre": "Baños de bosque",
+      "Descripcion": "&nbsp;",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 20,
+  
+
+      "EsPresencial": true,
+      "EsOnline": false,
+
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "texto antes imgs"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "texto después"
+        }
+
+      ]
+    },
+    {
+      "Nombre": "Reiki I",
+      "Descripcion": "&nbsp;",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 20,
+      "Duracion": "30-40 min",
+
+      "EsPresencial": false,
+      "EsOnline": true,
+
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "texto antes imgs"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "texto después"
+        }
+
+      ]
+    },
+    {
+      "Nombre": "Reiki I",
+      "Descripcion": "&nbsp;",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 50,
+      "Duracion": "1:30 hora",
+
+      "EsPresencial": true,
+      "EsOnline": false,
+
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "texto antes imgs"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
+            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "texto después"
         }
 
       ]
