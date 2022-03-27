@@ -378,6 +378,6 @@ class Views {
             'meditacion': false
 
         };
-        window.DicSwipe = {};
+
     }
 }
