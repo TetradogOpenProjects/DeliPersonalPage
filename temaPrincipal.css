@@ -488,7 +488,7 @@ h2 {
     #fraseInspiradora {
         display: block;
         top: 50px;
-        margin-left: -30px;
+        margin-left: -6%;
         margin-right: 13px;
         width: 114px;
         height: 179px;
@@ -503,7 +503,7 @@ h2 {
 @media screen and (min-width:341px){
     #fraseInspiradora {
         display: block;
-        margin-left: -6%;
+        margin-left: auto;
         margin-right: 10%;
         top: 50px;
         height: 150px;
