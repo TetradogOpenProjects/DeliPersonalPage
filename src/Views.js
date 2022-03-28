@@ -79,23 +79,12 @@ class Views {
         return divPrecio;
     }
     static GetId(curso, prefix = 'curso') {
-        var id = prefix + '_' + Views.ReplaceAll(curso.Nombre, ' ', '');
+        var id = prefix + '_' + Utils.ReplaceAll(curso.Nombre, ' ', '');
         return id;
     }
-    /**
-     * Así es compatible con los navegadores viejos
-     * @param {any} str
-     * @param {any} toReplace
-     * @param {any} toSet
-     */
-    static ReplaceAll(str, toReplace, toSet = '') {
-        while (str.includes(toReplace)) {
-            str = str.replace(toReplace, toSet);
-        }
-        return str;
-    }
 
 
+    
     static GetItemDiv(item, type) {
 
         var plazasOnline = 0, plazasPresenciales = 0;

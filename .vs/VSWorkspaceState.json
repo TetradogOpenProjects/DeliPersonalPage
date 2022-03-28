@@ -2,7 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\Data",
-    "\\Imagenes",
     "\\Imagenes\\Circulos",
     "\\Imagenes\\Cursos",
     "\\Imagenes\\Meditaciones",
@@ -11,6 +10,6 @@
     "\\Imagenes\\Terapias",
     "\\src"
   ],
-  "SelectedNode": "\\src\\Views.js",
+  "SelectedNode": "\\src\\Main.js",
   "PreviewInSolutionExplorer": false
 }

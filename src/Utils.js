@@ -9,4 +9,16 @@ class Utils {
         }
 
     }
+    /**
+ * Así es compatible con los navegadores viejos
+ * @param {any} str
+ * @param {any} toReplace
+ * @param {any} toSet
+ */
+    static ReplaceAll(str, toReplace, toSet = '') {
+        while (str.includes(toReplace)) {
+            str = str.replace(toReplace, toSet);
+        }
+        return str;
+    }
 }
