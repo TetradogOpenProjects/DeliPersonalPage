@@ -69,7 +69,11 @@ class Views {
         var divPrecio;
         if (precio > 0) {
             divPrecio = '<div class="precio"><label>' + precio + ' €</label></div>';
-        } else {
+        }
+        else if (precio < 0) {
+            divPrecio = '<div class="precio"><label>A Consultar</label></div>';
+        }
+        else {
             divPrecio = '<div class="precio"><label>Gratuita</label></div>';
         }
         return divPrecio;
