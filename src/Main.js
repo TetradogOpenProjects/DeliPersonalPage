@@ -3,7 +3,7 @@ $(function () {
 
     var partes = [];
     
-    Views.Init();
+
     
     window.DicSwipeOrClick = {};
     //asi si en el futuro cambio la forma de detactarlo solo lo cambio aqui
@@ -37,8 +37,8 @@ $(function () {
 
 
     Data.GetOrientacion().then(orientacion => {
-        addBlock('orientacion', 'Orientación', Views.GetContentView('orientacion', orientacion));
-        Views.SetClicContentViewMenus('orientacion', orientacion);
+        addBlock('orientacion', 'Orientación', Content.get('orientacion', orientacion));
+        Content.SetClicMenus('orientacion', orientacion);
     });
 
     Data.GetOrigenReiki().then(origen => {
@@ -61,7 +61,7 @@ $(function () {
 
         addBlock('introduccionReiki', 'Introducción Reiki', '<div id="' + Views.GetId(introduccionReiki, 'introduccionReiki') + '" class="introduccionReiki"><p class="preContent row">' +
             introduccionReiki.Content[0].Value + '</p>' +
-            Views.GetContentView('introduccionReiki', introduccionReiki, true) +
+            Content.get('introduccionReiki', introduccionReiki, true) +
             '<div class="row">' + Views.GetMasOMenosInfo() + '</div>' + '</div>');
         Views.SetClicMasOMenosInfo(introduccionReiki, 'introduccionReiki');
 
@@ -93,15 +93,15 @@ $(function () {
     });
 
     Data.GetSiempreEnContacto().then(siempreEnContacto => {
-        addBlock('siempreEnContacto', 'Siempre en contacto', Views.GetContentView('siempreEnContacto', siempreEnContacto));
-        Views.SetClicContentViewMenus('siempreEnContacto', siempreEnContacto);
+        addBlock('siempreEnContacto', 'Siempre en contacto', Content.get('siempreEnContacto', siempreEnContacto));
+        Content.setClicMenus('siempreEnContacto', siempreEnContacto);
     });
     Data.GetMensaje().then(mensaje => {
-        addBlock('mensaje', 'Mensaje', Views.GetContentView('mensaje', mensaje));
-        Views.SetClicContentViewMenus('mensaje', mensaje);
+        addBlock('mensaje', 'Mensaje', Content.get('mensaje', mensaje));
+        Content.setClicMenus('mensaje', mensaje);
     });
 
-
+    
     Data.GetLinks().then(links => {
 
         addBlock('links', null, '<div><span><a class="textoSinDestacar" href="' + links.PerfilFederada + '" target="_blanc" >Acreditaciones</a><a class="textoSinDestacar" href="' + links.SourceCode + '" target="_blanc" >Source Code</a><div><a class="textoSinDestacar" href="LicenciasSoftware.html" target="_blanc" >Licencias Software</a></div></span><img id="imgFederacion"  /></div>');
@@ -273,16 +273,16 @@ $(function () {
         var id = 'parent_items_' + idParent;
         var content = '<div id="' + id + '" class="' + PARENTSLIDE + '" ></div>';
 
-        addBlock(idParent, titulo, content + Views.getMenu(id, 'menuItemPrincipalOff', arrayData.length));
+        addBlock(idParent, titulo, content + Menu.get(id, 'menuItemPrincipalOff', arrayData.length));
 
-        Views.setClickMenu(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data, idMedia) => {
+        Menu.setClick(id, 'menuItemPrincipalOn', 'menuItemPrincipalOff', (data, idMedia) => {
 
             var item = data[0];
             var tipo = data[1];
 
             $('#' + id).html(methodGetOneView(item, tipo));
             Views.SetClicMasOMenosInfo(item, tipo);
-
+            
                 if (!window.DicSwipeOrClick[id]) {
                     window.DicSwipeOrClick[id] = true;
                     if (window.IsTouch) {
@@ -295,7 +295,7 @@ $(function () {
                                 menuId = "menu" + event.target.id.replace('img', '').replace('video', '');
                             }
                         }
-                            menuSiguiente(menuId);
+                            Menu.Siguiente(menuId);
     
 
                     });
@@ -310,7 +310,7 @@ $(function () {
                         }
 
 
-                        menuAnterior(menuId);
+                        Menu.Anterior(menuId);
 
 
 
@@ -322,29 +322,14 @@ $(function () {
                      }
                  } 
 
+        },
+        (tipo) => {
+            if (Content.DicDesplegado[tipo]) {
+                Utils.SaltaAAncora(tipo + 'Principio');
+            }
         }, arrayData, tipo);
     }
-    function menuSiguiente(menuId) {
-        const ISON = 'isON';
-        if ($("#" + menuId + ' :last-child').hasClass(ISON)) {
-            $("#" + menuId + ' :first-child').click();
-        } else {
-            $("#" + menuId + ' .' + ISON).next().click();
 
-        }
-
-    }
-
-    function menuAnterior(menuId) {
-        const ISON = 'isON';
-        if ($("#" + menuId + ' :first-child').hasClass(ISON)) {
-            $("#" + menuId + ' :last-child').click();
-        } else {
-            $("#" + menuId + ' .' + ISON).prev().click();
-
-        }
-   
-    }
     function addBlock(idParent, title, content, bootstrap = " col-11 col-sm-11  col-md-6 offset-md-3") {
         var div = "<div class='" + bootstrap + "'>";
         div += "<div class='item'>";

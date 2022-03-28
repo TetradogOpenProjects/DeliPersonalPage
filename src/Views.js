@@ -79,7 +79,7 @@ class Views {
         return divPrecio;
     }
     static GetId(curso, prefix = 'curso') {
-        var id = prefix + '_' + this.ReplaceAll(curso.Nombre, ' ', '');
+        var id = prefix + '_' + Views.ReplaceAll(curso.Nombre, ' ', '');
         return id;
     }
     /**
@@ -144,9 +144,9 @@ class Views {
         divItem += '</div>';
 
         divItem += Views.GetTituloYSubtitulo(item.Nombre, item.Descripcion);
-        divItem += Views.GetContentView(Views.GetId(item, type), item, !window.DicDesplegado[type]);
+        divItem += Content.get(Views.GetId(item, type), item, !Content.DicDesplegado[type]);
         divItem += Views.GetPrecio(item.Precio);
-        divItem += Views.GetMasOMenosInfo(window.DicDesplegado[type]);
+        divItem += Views.GetMasOMenosInfo(Content.DicDesplegado[type]);
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
             divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && (item.PlazasOnline > 0 || item.PlazasOnline < 0), item.SeGrabara);
         } else if (item.hasOwnProperty('Plazas')) {
@@ -176,7 +176,7 @@ class Views {
     static SetClicMasOMenosInfo(item, tipo) {
         var id = Views.GetId(item, tipo);
         if (item.Content) {
-            Views.SetClicContentViewMenus(id, item);
+            Content.setClicMenus(id, item);
             
         }
 
@@ -185,7 +185,7 @@ class Views {
             $('#' + id + ' .menosInfo').show();
             $('#' + id + ' .content').show();
             $('#' + id + ' .preContent').hide();
-            window.DicDesplegado[tipo] = true;
+            Content.DicDesplegado[tipo] = true;
         });
         $('#' + id + ' .menosInfo').attr('tipo', tipo);
         $('#' + id + ' .menosInfo').click(function () {
@@ -195,24 +195,15 @@ class Views {
             $('#' + id + ' .menosInfo').hide();
             $('#' + id + ' .content').hide();
             $('#' + id + ' .preContent').show();
-            window.DicDesplegado[tipo] = false;
-            Views.SaltaAAncora($(this).attr('tipo') + 'Principio');
+            Content.DicDesplegado[tipo] = false;
+            Utils.SaltaAAncora($(this).attr('tipo') + 'Principio');
              
      
             
         });
 
     }
-    static SaltaAAncora(idAncora) {
-        
-        var target = $('[name=' + idAncora + ']');
-        if (target.length) {
-            scrollTo({
-                top: (target.offset().top-100)
-            });
-        }
- 
-    }
+
     static GetFechaInicio(inicio = null, fin = null, proximamente = true) {
         var divFecha = '<div class="fecha">';
         var ponerInicioYFin = !(inicio == null || fin == null);
@@ -240,192 +231,9 @@ class Views {
     }
 
 
-    static MenuItem(id, dic = {}, clases = '') {
-        var div = '<div id="' + id + '" class="menuItem ' + clases + '" ';
-        for (var key in dic) {
-            div += key + '="' + dic[key] + '" ';
-        }
-        return div + '></div>';
-    }
-
-    static Menu(id, innerHTML = '') {
-        return '<div id="' + id + '" class="menu d-flex flex-row justify-content-center alig-items-center ">' + innerHTML + '</div>';
-    }
-
-    static GetContentView(idParent, item, isHiden = false) {
-        var divContent;
-        var idMediaCarrusel;
-        var strHide = '';
-        if (isHiden) {
-            strHide = "style='display:none'";
-        }
-        divContent = "<div id='content_" + idParent + "'class='content' " + strHide + ">";
-        for (var i = 0; i < item.Content.length; i++) {
-            if (item.Content[i].IsUrl) {
-                if (item.Content[i].Value.length == 1) {
-                    if (item.Content[i].Value[0].indexOf('http') == -1) {
-                        divContent += "<img src='" + item.Content[i].Value[0] + "' class='row col-12' ></img>";
-                    } else {
-                        divContent += "<iframe src='" + item.Content[i].Value[0] + "' class='row col-12' ></iframe>";
-                    }
-                }
-                else {
-
-                    idMediaCarrusel = "media_" + i + "_" + idParent;
-                    divContent += "<div id='" + idMediaCarrusel + "' class='row' ><img id='img_" + idMediaCarrusel + "' class='col-12 carrusel'  style='display:none;' />";
-                    divContent += "<iframe id='video_" + idMediaCarrusel + "' class='col-12 carrusel' style='display:none;' ></iframe></div>";
-                    divContent += Views.getMenu(idMediaCarrusel, 'menuItemSecundarioOff', item.Content[i].Value.length);
-
-                }
-            } else {
-                divContent += "<p class='row'>" + item.Content[i].Value + "</p>";
-            }
-        }
-
-        divContent += "<p class='row'></p>";
-        divContent += "</div>";
-
-        return divContent;
-    }
-    static SetClicContentViewMenus(idParent, item) {
-        var idMediaCarrusel;
 
 
 
-        for (var i = 0; i < item.Content.length; i++) {
-            if (item.Content[i].IsUrl && item.Content[i].Value.length > 1) {
-
-                idMediaCarrusel = "media_" + i + "_" + idParent;
-                this.setClickMenu(idMediaCarrusel, 'menuItemSecundarioOn', 'menuItemSecundarioOff', (pathImg, idMedia) => {
-
-                    idMedia = idMedia.replace('item_', '');
-
-                    if (pathImg.indexOf('http') == -1) {
-                        $("#img_" + idMedia).attr('src', pathImg);
-                        $("#video_" + idMedia).hide();
-                        $("#img_" + idMedia).show();
-                    } else {
-                        $("#video_" + idMedia).attr('src', pathImg);
-                        $("#video_" + idMedia).show();
-                        $("#img_" + idMedia).hide();
-                    }
-                }, item.Content[i].Value);
-                //ahora pongo el gesto de pasar el item con el dedo
 
 
-            }
-        }
-
-
-    }
-    static getMenu(idParent, itemColorDisabled, arrayDataItemsLength) {
-
-        var idMenu = 'menu_' + idParent;
-        var idMenuItemPrefix = 'item_' + idParent;
-
-        var items = '';
-
-        for (var i = 0; i < arrayDataItemsLength; i++) {
-
-            items += Views.MenuItem(idMenuItemPrefix + '_' + i, {
-                'prefix': idMenuItemPrefix,
-                'pos': i,
-            }, itemColorDisabled);
-
-
-
-        }
-
-        return Views.Menu(idMenu, items);
-
-
-
-    }
-
-    static setClickMenu(idParent, itemColorEnable, itemColorDisabled, metodoUpdateItem, arrayDataItems, tipo = null) {
-        const ISON = 'isON';
-        const DISABLED = 1;
-        const ENABLED = 0;
-
-
-        var idMenuItemPrefix;
-        var idMenuItem;
-
-
-
-        idMenuItemPrefix = 'item_' + idParent;
-
-        window.DicMenuData[idMenuItemPrefix] = arrayDataItems;
-        window.DicMenuMethodUpdate[idMenuItemPrefix] = metodoUpdateItem;
-        window.DicMenuItemColors[idMenuItemPrefix] = [itemColorEnable, itemColorDisabled];
-
-        for (var i = 0; i < arrayDataItems.length; i++) {
-            idMenuItem = idMenuItemPrefix + '_' + i;
-
-            $('#' + idMenuItem).click(function () {
-
-                var prefix = $(this).attr('prefix');
-                var pos = parseInt($(this).attr('pos'));
-
-                if (!$(this).hasClass(window.DicMenuItemColors[prefix][ENABLED])) {
-
-
-                    for (var j = 0, jF = window.DicMenuData[prefix].length; j < jF; j++) {
-                        if (j != pos) {
-                            $('#' + prefix + '_' + j).removeClass(window.DicMenuItemColors[prefix][ENABLED]);
-                            $('#' + prefix + '_' + j).addClass(window.DicMenuItemColors[prefix][DISABLED]);
-                            $('#' + prefix + '_' + j).removeClass(ISON);
-                        }
-                    }
-
-                    $(this).removeClass(window.DicMenuItemColors[prefix][DISABLED]);
-                    $(this).addClass(window.DicMenuItemColors[prefix][ENABLED]);
-                    $(this).addClass(ISON);
-                    if (tipo != null) {
-                        window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos], tipo], prefix);
-                        if (window.DicNotFirstTime[tipo]) {
-                            if (window.DicDesplegado[tipo]) {
-                                Views.SaltaAAncora(tipo + 'Principio');
-                            }
-                        } else {
-                            window.DicNotFirstTime[tipo] = true;
-                        }
-                        
-                    }
-                    else
-                        window.DicMenuMethodUpdate[prefix](window.DicMenuData[prefix][pos], prefix);
-
-                }
-
-
-            });
-        }
-        //pongo el primer item
-        $('#' + idMenuItemPrefix + '_' + '0').click();
-        
-
-
-
-    }
-
-    static Init() {
-
-        window.DicMenuData = {};
-        window.DicMenuMethodUpdate = {};
-        window.DicMenuItemColors = {};
-        window.DicDesplegado = {
-            'circulo': false,
-            'curso': false,
-            'terapia': false,
-            'meditacion': false
-
-        };
-        window.DicNotFirstTime = {
-            'circulo': false,
-            'curso': false,
-            'terapia': false,
-            'meditacion': false
-        };
-
-    }
 }
