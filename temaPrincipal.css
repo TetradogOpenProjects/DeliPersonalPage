@@ -233,6 +233,7 @@ h2 {
     position: relative;
     left: 15px;
     float: left;
+    height:100px;
 }
 
 .curso .titulo {
