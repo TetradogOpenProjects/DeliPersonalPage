@@ -38,7 +38,7 @@ $(function () {
 
     Data.GetOrientacion().then(orientacion => {
         addBlock('orientacion', 'Orientación', Content.get('orientacion', orientacion));
-        Content.SetClicMenus('orientacion', orientacion);
+        Content.setClicMenus('orientacion', orientacion);
     });
 
     Data.GetOrigenReiki().then(origen => {
