@@ -235,6 +235,9 @@ h2 {
     float: left;
     height:100px;
 }
+.sinFecha {
+    height: 15px;
+}
 
 .curso .titulo {
     top: 25%;

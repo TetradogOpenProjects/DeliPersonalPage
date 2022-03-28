@@ -8,8 +8,6 @@ class Views {
         var plazasDiv = '<div class="plazas segundo">';
         if (presenciales > 0) {
             plazasDiv += '<label>' + presenciales + ' plazas presenciales </label>';
-        } else {
-            plazasDiv += '<label>&nbsp;</label>';
         }
         if (online > 0) {
             plazasDiv += '<label class="segundo">' + online + ' plazas online </label>';
@@ -106,6 +104,8 @@ class Views {
                 divItem += Views.GetFechaInicio(item.Fecha);
             } else if (item.hasOwnProperty('FechaInicio') && item.hasOwnProperty('FechaFin')) {
                 divItem += Views.GetFechaInicio(item.FechaInicio, item.FechaFin);
+            } else {
+                divItem += '<div class="sinFecha"></div>';
             }
             if (item.hasOwnProperty('PlazasPresenciales')) {
                 plazasPresenciales = item.PlazasPresenciales;
