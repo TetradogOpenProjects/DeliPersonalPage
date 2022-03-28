@@ -256,9 +256,12 @@ h2 {
     line-height: 35px;
     text-align: center;
     width: 100%;
-    height: 100px;
-}
+    height:150px;
 
+}
+.tituloYSubtitulo{
+    height:330px;
+}
 .subtitulo {
     position: relative;
     font-weight: 400;
@@ -266,7 +269,7 @@ h2 {
     line-height: 23px;
     text-align: center;
     width: 100%;
-    height: 46px;
+ 
 }
 
 .modalidad {
