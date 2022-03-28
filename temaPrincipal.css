@@ -31,7 +31,7 @@
 
 .menu {
     margin-top: 10px;
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
 .menuItemSecundarioOn {
@@ -175,7 +175,7 @@ p {
     height: 100%;
     z-index: 0;
     position: absolute;
-  /*  border-radius: 43px; */
+    /*  border-radius: 43px; */
 }
 
 #presentacion .fondo {
@@ -233,8 +233,9 @@ h2 {
     position: relative;
     left: 15px;
     float: left;
-    height:100px;
+    height: 100px;
 }
+
 .sinFecha {
     height: 15px;
 }
@@ -314,7 +315,6 @@ h2 {
 }
 
 #links a {
-   
     font-size: 25px;
     line-height: 29px;
     margin-right: 10px;
@@ -325,11 +325,11 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
+    a:hover {
+        text-decoration: none;
+    }
 
-    #links {
+#links {
     margin: 15px 0px;
 }
 
@@ -387,6 +387,10 @@ a:hover {
     height: 150px;
 }
 
+#imgFederacion {
+    border-radius: 50px;
+}
+
 @media screen and (min-width:411px) {
 
     #imgFederacion {
@@ -410,6 +414,7 @@ a:hover {
 @media screen and (max-width:351px) {
 
     #imgFederacion {
+        border-radius: 35px;
         height: 70px;
         position: absolute;
         right: -10%;
@@ -425,7 +430,7 @@ a:hover {
 
 @media screen and (max-width:270px) {
 
- 
+
     #fraseInspiradora {
         display: block;
         top: 50px;
@@ -442,8 +447,6 @@ a:hover {
         height: 200px;
         width: 134px;
     }
-
-
 }
 
 
@@ -464,6 +467,7 @@ a:hover {
         height: 150px;
     }
 }
+
 @media screen and (max-width:340px) {
 
     .col-3 {
@@ -523,6 +527,7 @@ a:hover {
         margin-right: 7px;
     }
 }
+
 @media screen and (max-width:294px) {
 
 
@@ -533,9 +538,9 @@ a:hover {
         height: 200px;
         width: 134px;
     }
+
     #fraseInspiradora {
         margin-left: -24px;
         margin-right: 0px;
     }
 }
-
