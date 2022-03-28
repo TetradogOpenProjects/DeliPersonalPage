@@ -8,9 +8,13 @@ class Views {
         var plazasDiv = '<div class="plazas segundo">';
         if (presenciales > 0) {
             plazasDiv += '<label>' + presenciales + ' plazas presenciales </label>';
+        } else {
+            plazasDiv += '<label>&nbsp;</label>';
         }
         if (online > 0) {
             plazasDiv += '<label class="segundo">' + online + ' plazas online </label>';
+        } else if (online < 0) {
+            plazasDiv += '<label class="segundo"> &#8734; plazas online </label>';
         }
         plazasDiv += '</div>';
 
@@ -64,7 +68,13 @@ class Views {
         return divDuracion;
     }
     static GetPrecio(precio) {
-        return '<div class="precio"><label>' + precio + ' €</label></div>';
+        var divPrecio;
+        if (precio > 0) {
+            divPrecio = '<div class="precio"><label>' + precio + ' €</label></div>';
+        } else {
+            divPrecio = '<div class="precio"><label>Gratuita</label></div>';
+        }
+        return divPrecio;
     }
     static GetId(curso, prefix = 'curso') {
         var id = prefix + '_' + this.ReplaceAll(curso.Nombre, ' ', '');
@@ -89,12 +99,12 @@ class Views {
         var plazasOnline = 0, plazasPresenciales = 0;
         var divItem = '<div id="' + Views.GetId(item, type) + '" class="' + type + '">';
 
-        if ((item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) && (item.hasOwnProperty('Fecha') || (item.hasOwnProperty('FechaInicio') && item.hasOwnProperty('FechaFin')))) {
+        if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
             divItem += '<div><div class="fechaYPlazas">';
             divItem += '<div class="row">';
             if (item.hasOwnProperty('Fecha')) {
                 divItem += Views.GetFechaInicio(item.Fecha);
-            } else {
+            } else if (item.hasOwnProperty('FechaInicio') && item.hasOwnProperty('FechaFin')) {
                 divItem += Views.GetFechaInicio(item.FechaInicio, item.FechaFin);
             }
             if (item.hasOwnProperty('PlazasPresenciales')) {
@@ -134,7 +144,7 @@ class Views {
         divItem += Views.GetPrecio(item.Precio);
         divItem += Views.GetMasOMenosInfo(window.DicDesplegado[type]);
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
-            divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && item.PlazasOnline > 0, item.SeGrabara);
+            divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && (item.PlazasOnline > 0 || item.PlazasOnline < 0), item.SeGrabara);
         } else if (item.hasOwnProperty('Plazas')) {
             divItem += Views.GetModalidad(item.Plazas > 0, false, item.SeGrabara);
         } else if (item.hasOwnProperty('EsOnline') || item.hasOwnProperty('EsPresencial')) {
@@ -249,7 +259,7 @@ class Views {
         for (var i = 0; i < item.Content.length; i++) {
             if (item.Content[i].IsUrl) {
                 if (item.Content[i].Value.length == 1) {
-                    if (item.Content[i].Value[0].indexOf('www.') == -1) {
+                    if (item.Content[i].Value[0].indexOf('http') == -1) {
                         divContent += "<img src='" + item.Content[i].Value[0] + "' class='row col-12' ></img>";
                     } else {
                         divContent += "<iframe src='" + item.Content[i].Value[0] + "' class='row col-12' ></iframe>";
@@ -286,7 +296,7 @@ class Views {
 
                     idMedia = idMedia.replace('item_', '');
 
-                    if (pathImg.indexOf('www.') == -1) {
+                    if (pathImg.indexOf('http') == -1) {
                         $("#img_" + idMedia).attr('src', pathImg);
                         $("#video_" + idMedia).hide();
                         $("#img_" + idMedia).show();
@@ -370,7 +380,9 @@ class Views {
                     if (tipo != null) {
                         window.DicMenuMethodUpdate[prefix]([window.DicMenuData[prefix][pos], tipo], prefix);
                         if (window.DicNotFirstTime[tipo]) {
-                            Views.SaltaAAncora(tipo + 'Principio');
+                            if (window.DicDesplegado[tipo]) {
+                                Views.SaltaAAncora(tipo + 'Principio');
+                            }
                         } else {
                             window.DicNotFirstTime[tipo] = true;
                         }
@@ -386,7 +398,7 @@ class Views {
         }
         //pongo el primer item
         $('#' + idMenuItemPrefix + '_' + '0').click();
-
+        
 
 
 

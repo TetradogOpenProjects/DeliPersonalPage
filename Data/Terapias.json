@@ -16,20 +16,19 @@
       "Content": [
         {
           "IsUrl": false,
-          "Value": "El primer nivel es la reconexion mas alla de toda explicacion didactitica convertirse en canal requiere una conexion entre nuestro sistema energetico y y la energia universal.Primera toma de contacto con el alumno o alumnos para hacer entrega del dossier y explicar detalles que no estan en el libro.Enseñar el simbolo del primer nivel y como se dibuja."
+          "Value": "texto antes."
         },
         {
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
             "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
 
           ]
         },
         {
           "IsUrl": false,
-          "Value": "Despues hay un periodo de purificacion adonde durante 21 dias tienen que hacer una limpieza y dibujar el simbolo cada dia.Despues de los 21 dias cada alumno por separado hara con la maestra de reiki una ceramonia de iniciacion con la intencion de abrir el canal central energetico y reconectar al alumno con la fuente,el universo,a la energia vital universal.A partir de ahy el alumno podra hacer reiki"
+          "Value": "Texto después"
         }
 
       ]
@@ -56,7 +55,6 @@
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
             "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
 
           ]
@@ -69,8 +67,8 @@
       ]
     },
     {
-      "Nombre": "Limpieza energetica con pendulo hebreo",
-      "Descripcion": "Casas y personas",
+      "Nombre": "Limpiando cualquier anomalia",
+      "Descripcion": "Pendulo hebreo a distancia para detectar anomalias energeticas de personas y casas",
       "GPS": {
         "CoordenadaX": 41.7833,
         "CoordenadaY": 3.0333
@@ -90,8 +88,7 @@
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+            "Imagenes/Terapias/imgPenduloHebreo_1.jpg"
 
           ]
         },
@@ -102,7 +99,39 @@
 
       ]
     },
-   
+    {
+      "Nombre": "Códigos de luz",
+      "Descripcion": "&nbsp;",
+      "GPS": {
+        "CoordenadaX": 41.7833,
+        "CoordenadaY": 3.0333
+      },
+      "Precio": 20,
+
+
+      "EsPresencial": true,
+      "EsOnline": false,
+
+      "Content": [
+        {
+          "IsUrl": false,
+          "Value": "Codigos de luz es geometria sagrada.Son patrones/codigos de activacion y de sanacion."
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgCodigosDeLuz_1.jpg"
+
+          ]
+        },
+        {
+          "IsUrl": false,
+          "Value": "Son codigos reales de las estrellas que activan tu luz interior y te recuerdan la sabiduria dentro de ti en tu energia de origen para ser tu yo versadera y te ayudan a conectar con lo dibino"
+        }
+
+      ]
+    },
     {
       "Nombre": "Baños de bosque",
       "Descripcion": "&nbsp;",
@@ -111,7 +140,7 @@
         "CoordenadaY": 3.0333
       },
       "Precio": 20,
-  
+
 
       "EsPresencial": true,
       "EsOnline": false,
@@ -125,14 +154,23 @@
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
+            "Imagenes/Terapias/imgBanosDeBosque_1.jpg",
+            "Imagenes/Terapias/imgBanosDeBosque_2.jpg"
 
           ]
         },
         {
           "IsUrl": false,
           "Value": "texto después"
+        },
+        {
+          "IsUrl": true,
+          "Value": [
+
+            "Imagenes/Terapias/imgBanosDeBosque_3.jpg",
+            "Imagenes/Terapias/imgBanosDeBosque_4.jpg"
+
+          ]
         }
 
       ]
@@ -140,12 +178,9 @@
     {
       "Nombre": "Reiki I",
       "Descripcion": "&nbsp;",
-      "GPS": {
-        "CoordenadaX": 41.7833,
-        "CoordenadaY": 3.0333
-      },
+   
       "Precio": 20,
-      "Duracion": "30-40 min",
+      "Duracion": "30 - 40 min",
 
       "EsPresencial": false,
       "EsOnline": true,
@@ -153,20 +188,19 @@
       "Content": [
         {
           "IsUrl": false,
-          "Value": "texto antes imgs"
+          "Value": "Transmision de energia en el tiempo y espacio.Desde el calor de tu casa Reiki te equilibra y alinea tu energia ."
         },
         {
           "IsUrl": true,
           "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
             "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
 
           ]
         },
         {
           "IsUrl": false,
-          "Value": "texto después"
+          "Value": "Para limpiar o transmutar desequilibrio energetico."
         }
 
       ]

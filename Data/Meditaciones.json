@@ -2,48 +2,38 @@
     "Meditaciones":[
 
       {
-        "Nombre": "Meditación1",
-        "Descripcion": "Descripción meditacion1",
-        "Precio": 15,
+        "Nombre": "Meditación",
+        "Descripcion": "Oficial Reiki",
+        "Precio": 0,
         "CursosPrevios": [],
-        "Fecha": "15/03/2022 13:36:00",
+        "Fecha": "",
         "UrlOnline": null,
-        "GPS": {
-          "CoordenadaX": 4.01,
-          "CoordenadaY": 0.05
-        },
-        "PlazasPresenciales": 10,
-        "PlazasOnline": 40,
-        "Duracion": "2 horas",
+        "Duracion": "12:34 min",
+        "PlazasOnline": -1,
         "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
-        "SeGrabara": true,
+        "SeGrabara": false,
         "Content": [
           {
             "IsUrl": false,
-            "Value": "Texto pre img"
+            "Value": "Si quieres enviar Reiki a la situación mundial actual, puedes usar este vídeo como guía."
           },
           {
             "IsUrl": true,
             "Value": [
-              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
-              "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
+              "https://www.youtube.com/embed/Dbg7RbqnW2o"
             ]
-          },
-          {
-            "IsUrl": false,
-            "Value": "Texto pos img"
           }
 
         ]
 
       },
       {
-        "Nombre": "Meditación2",
-        "Descripcion": "Descripción meditacion2",
+        "Nombre": "Meditación",
+        "Descripcion": "&nbsp;",
         "Precio": 15,
         "CursosPrevios": [],
-        "Fecha": "16/03/2022 13:36:00",
+        "Fecha": "Los lunes",
         "UrlOnline": null,
         "GPS": {
           "CoordenadaX": 4.01,
@@ -63,8 +53,7 @@
           {
             "IsUrl": true,
             "Value": [
-              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg",
-              "Imagenes/Cursos/imgCursoReikiUsuiI_2.jpg"
+              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg"
             ]
           },
           {
