@@ -5,7 +5,8 @@ Un breve resumen del trabajo desarrollado
 
 2- Comprar dominio y configurar Github Pages para hacer el host
 
-3- Diseñar en Figma el prototipo para ver la versión casi final en poco tiempo.
+3- Diseñar en [Figma el prototipo](https://www.figma.com/proto/J10qSBI0RkgvLUb59551NK/LaLuzDelAlma?page-id=0%3A1&node-id=40%3A761&viewport=241%2C48%2C0.78&scaling=scale-down&starting-point-node-id=40%3A761) para ver la versión casi final en poco tiempo.
+
 
 4- Desarrollar Backend estructurando la información en JSON.
 
@@ -19,8 +20,7 @@ Un breve resumen del trabajo desarrollado
 
 9- La clienta ha decidido cambiar el diseño al final y al no querer pagar los cambios extra se ha decidido que no continuaria más este proyecto juntos.
 
-link:
-https://tetradogopenprojects.github.io/DeliPersonalPage/
+[link web](https://tetradogopenprojects.github.io/DeliPersonalPage/)
 
 
 [los dejo por ser parte del proceso]
@@ -34,5 +34,5 @@ planes de futuro:
 
 -hacer una plataforma para acceder a contenido digital exclusivo usando ApiRest y compartir de Google.Drive
 
-link ApiRest: https://github.com/TetradogOpenProjects/DeliPersonalPage.ApiRest
+[link ApiRest](https://github.com/TetradogOpenProjects/DeliPersonalPage.ApiRest)
 
