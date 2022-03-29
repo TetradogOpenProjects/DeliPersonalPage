@@ -144,16 +144,17 @@ class Views {
             Views.DicPlegadoForzado[type] = false;
             divItem += Views.GetMasOMenosInfo(Content.DicDesplegado[type]);
         } else {
+            
+            Views.DicPlegadoForzado[type] = Content.DicDesplegado[type];
             Content.DicDesplegado[type] = false;
-            Views.DicPlegadoForzado[type] = true;
             divItem += '<span class="noMasOMenosInfo">&nbsp;</span>';
         }
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
-            divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && (item.PlazasOnline > 0 || item.PlazasOnline < 0), item.SeGrabara);
+            divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && (item.PlazasOnline > 0 || item.PlazasOnline < 0), item.hasOwnProperty('SeGrabara') && item.SeGrabara);
         } else if (item.hasOwnProperty('Plazas')) {
-            divItem += Views.GetModalidad(item.Plazas > 0, false, item.SeGrabara);
+            divItem += Views.GetModalidad(item.Plazas > 0, false, item.hasOwnProperty('SeGrabara') && item.SeGrabara);
         } else if (item.hasOwnProperty('EsOnline') || item.hasOwnProperty('EsPresencial')) {
-            divItem += Views.GetModalidad(item.hasOwnProperty('EsPresencial') && item.EsPresencial, item.hasOwnProperty('EsOnline') && item.EsOnline, item.SeGrabara);
+            divItem += Views.GetModalidad(item.hasOwnProperty('EsPresencial') && item.EsPresencial, item.hasOwnProperty('EsOnline') && item.EsOnline, item.hasOwnProperty('SeGrabara') && item.SeGrabara);
         }
         divItem += '</div>';
 
