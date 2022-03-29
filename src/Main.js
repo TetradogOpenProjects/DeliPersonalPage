@@ -2,7 +2,8 @@ $(function () {
     const SHOWUPDATEBANNER = "showUpdateBanner";
 
     var partes = [];
-    
+
+    Content.Init();
 
     
     window.DicSwipeOrClick = {};

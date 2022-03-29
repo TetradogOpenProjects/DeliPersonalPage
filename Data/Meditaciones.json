@@ -43,24 +43,8 @@
         "Duracion": "1 hora",
         "HayDescanso": false,
         "AccesoAGrabacionIncluido": false,
-        "SeGrabara": true,
-        "Content": [
-          {
-            "IsUrl": false,
-            "Value": "Texto pre img"
-          },
-          {
-            "IsUrl": true,
-            "Value": [
-              "Imagenes/Cursos/imgCursoReikiUsuiI_1.jpg"
-            ]
-          },
-          {
-            "IsUrl": false,
-            "Value": "Texto pos img"
-          }
+        "SeGrabara": true
 
-        ]
 
       }
 

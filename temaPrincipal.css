@@ -14,7 +14,10 @@
 
 
 
-
+.noMasOMenosInfo{
+    height:31px;
+    display:inline-block;
+}
 
 .menuItem {
     width: 10px;

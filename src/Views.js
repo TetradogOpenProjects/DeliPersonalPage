@@ -133,9 +133,15 @@ class Views {
         divItem += '</div>';
 
         divItem += Views.GetTituloYSubtitulo(item.Nombre, item.Descripcion);
-        divItem += Content.get(Views.GetId(item, type), item, !Content.DicDesplegado[type]);
+        if (item.hasOwnProperty('Content')) {
+            divItem += Content.get(Views.GetId(item, type), item, !Content.DicDesplegado[type]);
+        } 
         divItem += Views.GetPrecio(item.Precio);
-        divItem += Views.GetMasOMenosInfo(Content.DicDesplegado[type]);
+        if (item.hasOwnProperty('Content')) {
+            divItem += Views.GetMasOMenosInfo(Content.DicDesplegado[type]);
+        } else {
+            divItem += '<span class="noMasOMenosInfo">&nbsp;</span>';
+        }
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
             divItem += Views.GetModalidad(item.hasOwnProperty('PlazasPresenciales') && item.PlazasPresenciales > 0, item.hasOwnProperty('PlazasOnline') && (item.PlazasOnline > 0 || item.PlazasOnline < 0), item.SeGrabara);
         } else if (item.hasOwnProperty('Plazas')) {
