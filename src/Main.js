@@ -3,7 +3,7 @@ $(function () {
 
     var partes = [];
 
-    Content.Init();
+    Views.Init();
 
     
     window.DicSwipeOrClick = {};
@@ -324,8 +324,8 @@ $(function () {
                  } 
 
         },
-        (tipo) => {
-            if (Content.DicDesplegado[tipo]) {
+            (tipo) => {
+                if (Content.DicDesplegado[tipo] || Views.DicPlegadoForzado[tipo]) {
                 Utils.SaltaAAncora(tipo + 'Principio');
             }
         }, arrayData, tipo);

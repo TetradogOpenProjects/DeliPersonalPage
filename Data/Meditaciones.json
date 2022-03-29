@@ -29,15 +29,10 @@
       },
       {
         "Nombre": "Meditación",
-        "Descripcion": "&nbsp;",
         "Precio": 15,
         "CursosPrevios": [],
         "Fecha": "Los lunes",
         "UrlOnline": null,
-        "GPS": {
-          "CoordenadaX": 4.01,
-          "CoordenadaY": 0.05
-        },
         "PlazasPresenciales": 10,
         "PlazasOnline": 35,
         "Duracion": "1 hora",

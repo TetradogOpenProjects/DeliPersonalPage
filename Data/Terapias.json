@@ -11,27 +11,9 @@
       "Duracion": "2 horas",
 
       "EsPresencial": true,
-      "EsOnline": false,
+      "EsOnline": false
 
-      "Content": [
-        {
-          "IsUrl": false,
-          "Value": "texto antes."
-        },
-        {
-          "IsUrl": true,
-          "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
-
-          ]
-        },
-        {
-          "IsUrl": false,
-          "Value": "Texto después"
-        }
-
-      ]
     },
     {
       "Nombre": "Reflexologia",
@@ -51,14 +33,7 @@
           "IsUrl": false,
           "Value": "En Egipto ya utilizaban este metodo holistico que trata la glovalidad del cuerpo humano,friccionando en una zona concreta  para conseguir aliviar o relajar a la persona."
         },
-        {
-          "IsUrl": true,
-          "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
-
-          ]
-        },
         {
           "IsUrl": false,
           "Value": "Este metodo consiste en activar las energias del cuerpo a traves de la presion de puntos reflejos del pie.Estos puntos reflejan todas las lineas transversales y nos permiter situar a organos,visceras,y otras estructuras que atraviesan por encima."
@@ -80,10 +55,7 @@
       "EsOnline": true,
 
       "Content": [
-        {
-          "IsUrl": false,
-          "Value": "texto antes imgs"
-        },
+
         {
           "IsUrl": true,
           "Value": [
@@ -91,21 +63,13 @@
             "Imagenes/Terapias/imgPenduloHebreo_1.jpg"
 
           ]
-        },
-        {
-          "IsUrl": false,
-          "Value": "texto después"
         }
 
       ]
     },
     {
       "Nombre": "Códigos de luz",
-      "Descripcion": "&nbsp;",
-      "GPS": {
-        "CoordenadaX": 41.7833,
-        "CoordenadaY": 3.0333
-      },
+
       "Precio": 20,
 
 
@@ -134,11 +98,6 @@
     },
     {
       "Nombre": "Baños de bosque",
-      "Descripcion": "&nbsp;",
-      "GPS": {
-        "CoordenadaX": 41.7833,
-        "CoordenadaY": 3.0333
-      },
       "Precio": 20,
 
 
@@ -146,10 +105,7 @@
       "EsOnline": false,
 
       "Content": [
-        {
-          "IsUrl": false,
-          "Value": "texto antes imgs"
-        },
+
         {
           "IsUrl": true,
           "Value": [
@@ -159,10 +115,7 @@
 
           ]
         },
-        {
-          "IsUrl": false,
-          "Value": "texto después"
-        },
+
         {
           "IsUrl": true,
           "Value": [
@@ -190,14 +143,7 @@
           "IsUrl": false,
           "Value": "Transmision de energia en el tiempo y espacio.Desde el calor de tu casa Reiki te equilibra y alinea tu energia ."
         },
-        {
-          "IsUrl": true,
-          "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
-
-          ]
-        },
         {
           "IsUrl": false,
           "Value": "Para limpiar o transmutar desequilibrio energetico."
@@ -207,37 +153,13 @@
     },
     {
       "Nombre": "Reiki I",
-      "Descripcion": "&nbsp;",
-      "GPS": {
-        "CoordenadaX": 41.7833,
-        "CoordenadaY": 3.0333
-      },
       "Precio": 50,
       "Duracion": "1:30 hora",
 
       "EsPresencial": true,
-      "EsOnline": false,
+      "EsOnline": false
 
-      "Content": [
-        {
-          "IsUrl": false,
-          "Value": "texto antes imgs"
-        },
-        {
-          "IsUrl": true,
-          "Value": [
 
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg",
-            "Imagenes/Terapias/imgCirculoTerapeutico_1.jpg"
-
-          ]
-        },
-        {
-          "IsUrl": false,
-          "Value": "texto después"
-        }
-
-      ]
     }
   ]
 }

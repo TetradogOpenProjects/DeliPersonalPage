@@ -71,10 +71,10 @@ class Views {
             divPrecio = '<div class="precio"><label>' + precio + ' €</label></div>';
         }
         else if (precio < 0) {
-            divPrecio = '<div class="precio"><label>A Consultar</label></div>';
+            divPrecio = '<div class="precio"><label>a consultar</label></div>';
         }
         else {
-            divPrecio = '<div class="precio"><label>Gratuita</label></div>';
+            divPrecio = '<div class="precio"><label>gratuita</label></div>';
         }
         return divPrecio;
     }
@@ -89,7 +89,7 @@ class Views {
 
         var plazasOnline = 0, plazasPresenciales = 0;
         var divItem = '<div id="' + Views.GetId(item, type) + '" class="' + type + '">';
-
+        var subtitulo = '&nbsp;';
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
             divItem += '<div><div class="fechaYPlazas">';
             divItem += '<div class="row">';
@@ -132,14 +132,20 @@ class Views {
 
         divItem += '</div>';
 
-        divItem += Views.GetTituloYSubtitulo(item.Nombre, item.Descripcion);
+        if (item.hasOwnProperty('Descripcion')) {
+            subtitulo = item.Descripcion;
+        }
+        divItem += Views.GetTituloYSubtitulo(item.Nombre, subtitulo);
         if (item.hasOwnProperty('Content')) {
             divItem += Content.get(Views.GetId(item, type), item, !Content.DicDesplegado[type]);
         } 
         divItem += Views.GetPrecio(item.Precio);
         if (item.hasOwnProperty('Content')) {
+            Views.DicPlegadoForzado[type] = false;
             divItem += Views.GetMasOMenosInfo(Content.DicDesplegado[type]);
         } else {
+            Content.DicDesplegado[type] = false;
+            Views.DicPlegadoForzado[type] = true;
             divItem += '<span class="noMasOMenosInfo">&nbsp;</span>';
         }
         if (item.hasOwnProperty('PlazasPresenciales') || item.hasOwnProperty('PlazasOnline')) {
@@ -225,6 +231,21 @@ class Views {
         return divFecha;
     }
 
+    static Init() {
+        Menu.Init({
+            'circulo': false,
+            'curso': false,
+            'terapia': false,
+            'meditacion': false
+        });
+        Content.Init();
+        Views.DicPlegadoForzado = {
+            'circulo': false,
+            'curso': false,
+            'terapia': false,
+            'meditacion': false
+        }
+    }
 
 
 

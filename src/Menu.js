@@ -123,14 +123,9 @@ class Menu {
 
     }
 
-    static Init() {
+    static Init(dicNotFirstTime = {}) {
         if (!Menu.hasOwnProperty('DicNotFirstTime')) {
-            Menu.DicNotFirstTime = {
-                'circulo': false,
-                'curso': false,
-                'terapia': false,
-                'meditacion': false
-            };
+            Menu.DicNotFirstTime = dicNotFirstTime;
 
             Menu.DicMenuData = {};
             Menu.DicMenuMethodUpdate = {};
