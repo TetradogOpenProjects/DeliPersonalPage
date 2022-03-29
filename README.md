@@ -17,12 +17,13 @@ Un breve resumen del trabajo desarrollado
 
 8- Poner información real, facilitada con la clienta.
 
+9- La clienta ha decidido cambiar el diseño al final y al no querer pagar los cambios extra se ha decidido que no continuaria más este proyecto juntos.
 
 link:
-https://laluzdelalma.es
+https://tetradogopenprojects.github.io/DeliPersonalPage/
 
 
-
+[los dejo por ser parte del proceso]
 planes de futuro:
 
 -convertirla en PWA
